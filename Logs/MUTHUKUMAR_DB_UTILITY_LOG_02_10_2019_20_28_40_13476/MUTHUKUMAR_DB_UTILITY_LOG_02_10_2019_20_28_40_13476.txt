@@ -1,0 +1,18 @@
+2019/10/02 20:28:40 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_UTILITY_LOG
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: None *******
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 146     INFO | Imported from another class!!!
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: [   'F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminSignin.py',
+    'F://Python//script//DB_Scripts//09_sep_2019//MuthukumarClass.py'] *******
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarDbAdminSignin' Current version is "2019.07.14.01" 
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarDbAdminSignin.MuthukumarDbAdminSignin'>
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarDbAdminSignin found in file MuthukumarDbAdminSignin.py. Executing as a class.
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarClass' Current version is "None" 
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarClass.MuthukumarClass'>
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarClass found in file MuthukumarClass.py. Executing as a class.
+2019/10/02 20:28:40 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)
+inSignin'>
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarDbAdminSignin found in file MuthukumarDbAdminSignin.py. Executing as a class.
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarClass' Current version is "None" 
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarClass.MuthukumarClass'>
+2019/10/02 20:28:40 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarClass found in file MuthukumarClass.py. Executing as a class.
+2019/10/02 20:28:40 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)

@@ -1,0 +1,14 @@
+2019/10/02 20:26:55 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_UTILITY_LOG
+2019/10/02 20:26:55 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: None *******
+2019/10/02 20:26:55 MuthukumarDbUtility,line: 146     INFO | Imported from another class!!!
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: ['F://Python//script//DB_Scripts//09_sep_2019//MuthukumarClass.py'] *******
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarClass' Current version is "None" 
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarClass.MuthukumarClass'>
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarClass found in file MuthukumarClass.py. Executing as a class.
+2019/10/02 20:27:01 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)
+it list: ['F://Python//script//DB_Scripts//09_sep_2019//MuthukumarClass.py'] *******
+2019/10/02 20:27:01 MuthukumarDbExecuteTest,line: 343     INFO | Exec File 'MuthukumarDbExecuteTest' Current version is "2019.07.27.01" 
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarClass' Current version is "None" 
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarClass.MuthukumarClass'>
+2019/10/02 20:27:01 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarClass found in file MuthukumarClass.py. Executing as a class.
+2019/10/02 20:27:01 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)

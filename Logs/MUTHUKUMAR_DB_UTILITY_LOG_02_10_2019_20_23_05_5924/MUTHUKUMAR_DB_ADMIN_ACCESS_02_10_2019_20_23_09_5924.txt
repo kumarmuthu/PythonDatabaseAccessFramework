@@ -1,0 +1,134 @@
+2019/10/02 20:23:09 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_ADMIN_ACCESS
+2019/10/02 20:23:09 MuthukumarDbAdminAccess,line: 59     INFO | ***** Admin ACCESS page start *****
+2019/10/02 20:23:09 MuthukumarDbAdminSignin,line: 63     INFO | ***** Admin SIGNIN page start *****
+2019/10/02 20:23:09 MuthukumarDbAdminSignin,line: 65     INFO | Enter admin name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 20:23:18 MuthukumarDbAdminSignin,line: 173     INFO | Valid admin name: bala
+2019/10/02 20:23:18 MuthukumarDbAdminSignin,line: 73     INFO | Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] 
+Example : 91-9566067570
+2019/10/02 20:23:26 MuthukumarDbAdminSignin,line: 210     INFO | Its a valid Mobile Number: 91-9566067503
+2019/10/02 20:23:26 MuthukumarDbAdminSignin,line: 81     INFO | Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:23:30 MuthukumarDbAdminSignin,line: 247     INFO | Valid password: abcd
+2019/10/02 20:23:30 MuthukumarDbAdminSignin,line: 92     INFO | Inprogress your signin ... please wait a moments...
+2019/10/02 20:23:35 MuthukumarDb,line: 45     INFO | From decorator function, Creating new cursor object here!
+2019/10/02 20:23:35 MuthukumarDb,line: 51     INFO | pyobdc object is created successfully...
+2019/10/02 20:23:35 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** ADMIN_TABLE *** table
+2019/10/02 20:23:35 MuthukumarDbAdminSignin,line: 115     INFO | Entered admin mobilenumber, adminname and adminpassword are matched.
+2019/10/02 20:23:35 MuthukumarDbAdminSignin,line: 150     INFO | ***** Admin SIGNIN page end *****
+2019/10/02 20:23:35 MuthukumarDbAdminAccess,line: 67     INFO | ***** Selected table to access Database query: User_Table[1] Admin_Table[2]*****
+2019/10/02 20:23:38 MuthukumarDbAdminAccess,line: 79     INFO | User_Table will access
+2019/10/02 20:23:38 MuthukumarDbAdminAccess,line: 93     INFO | Note: Admin Access will denied while using more than 20(tms)
+2019/10/02 20:23:38 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:23:38 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:23:41 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:23:41 MuthukumarDbAdminAccess,line: 260     INFO | Please enter mobile number to make an update
+2019/10/02 20:23:51 MuthukumarDbAdminAccess,line: 266     INFO | Its a valid Mobile Number: 91-9566067502
+2019/10/02 20:23:51 MuthukumarDbAdminAccess,line: 306     INFO | Which column need to update!
+2019/10/02 20:24:00 MuthukumarDbAdminAccess,line: 311     INFO | Selected column is: user_secondname
+2019/10/02 20:24:00 MuthukumarDbAdminAccess,line: 314     INFO | What value need to replace!
+2019/10/02 20:24:22 MuthukumarDbAdminAccess,line: 319     INFO | Selected value is: david
+2019/10/02 20:24:22 MuthukumarDb,line: 375     INFO | Query executed Successful on *** USER_TABLE *** table
+2019/10/02 20:24:22 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:24:22 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:24:22 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:24:38 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:24:38 MuthukumarDbAdminAccess,line: 260     INFO | Please enter mobile number to make an update
+2019/10/02 20:24:40 MuthukumarDbAdminAccess,line: 266     INFO | Its a valid Mobile Number: 91-9566067571
+2019/10/02 20:24:40 MuthukumarDbAdminAccess,line: 306     INFO | Which column need to update!
+2019/10/02 20:24:54 MuthukumarDbAdminAccess,line: 311     INFO | Selected column is: user_secondname
+2019/10/02 20:24:54 MuthukumarDbAdminAccess,line: 314     INFO | What value need to replace!
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 319     INFO | Selected value is: sn
+2019/10/02 20:25:01 MuthukumarDb,line: 375     INFO | Query executed Successful on *** USER_TABLE *** table
+2019/10/02 20:25:01 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:25:16 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:25:16 MuthukumarDbAdminAccess,line: 367     INFO | Please enter mobile number to delete a Admin\User account
+2019/10/02 20:25:27 MuthukumarDbAdminAccess,line: 373     INFO | Its a valid Mobile Number: 91-9566067572
+2019/10/02 20:25:27 MuthukumarDbAdminAccess,line: 413     INFO | Re-enter->>> Which mobile number need to delete!
+2019/10/02 20:25:31 MuthukumarDb,line: 375     INFO | Query executed Successful on *** USER_TABLE *** table
+2019/10/02 20:25:31 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:25:31 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:25:31 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:25:35 MuthukumarDbAdminAccess,line: 113     INFO | Exiting Database access...
+2019/10/02 20:25:35 MuthukumarDbAdminAccess,line: 133     INFO | If you want to send an email, please give your option: (Yes/y or No/n)
+2019/10/02 20:25:37 MuthukumarDbAdminAccess,line: 138     INFO | Selected option is: y
+
+2019/10/02 20:25:37 MuthukumarDbAdminAccess,line: 140     INFO | Email will send to admin Email-id for backup...
+Enter admin Email-id: 
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 492     INFO | Its a valid Email ID: muthukumarece5@gmail.com
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 146     INFO | Entered admin Email-id is: muthukumarece5@gmail.com
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 166     INFO | ***** Admin ACCESS page end *****
+2019/10/02 20:26:01 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:26:01 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************
+6     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:24:38 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      hari      |      haran      |     harish    |        hari@gmail.com       |   91-9566067500   |     11/11/1990    |      123      |          123          |
+|      lee       |      david      |    bhvgvhgf   |        ghghg@gmm.llo        |   91-9566067502   |     11/11/2015    |      123      |          123          |
+|      bala      |     murugan     |      bala     | noreplymuthukumar@gmail.com |   91-9566067503   |     11/04/2015    |     12345     |         12345         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |      123      |          123          |
+|      mkr       |       sub       |      mkr      | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|     saran      |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |      abcd     |          abcd         |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+2019/10/02 20:24:38 MuthukumarDbAdminAccess,line: 260     INFO | Please enter mobile number to make an update
+2019/10/02 20:24:40 MuthukumarDbAdminAccess,line: 266     INFO | Its a valid Mobile Number: 91-9566067571
+2019/10/02 20:24:40 MuthukumarDbAdminAccess,line: 306     INFO | Which column need to update!
+2019/10/02 20:24:54 MuthukumarDbAdminAccess,line: 311     INFO | Selected column is: user_secondname
+2019/10/02 20:24:54 MuthukumarDbAdminAccess,line: 314     INFO | What value need to replace!
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 319     INFO | Selected value is: sn
+2019/10/02 20:25:01 MuthukumarDb,line: 375     INFO | Query executed Successful on *** USER_TABLE *** table
+2019/10/02 20:25:01 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      hari      |      haran      |     harish    |        hari@gmail.com       |   91-9566067500   |     11/11/1990    |      123      |          123          |
+|      lee       |      david      |    bhvgvhgf   |        ghghg@gmm.llo        |   91-9566067502   |     11/11/2015    |      123      |          123          |
+|      bala      |     murugan     |      bala     | noreplymuthukumar@gmail.com |   91-9566067503   |     11/04/2015    |     12345     |         12345         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |      123      |          123          |
+|      mkr       |        sn       |      mkr      | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|     saran      |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |      abcd     |          abcd         |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:25:01 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:25:16 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      hari      |      haran      |     harish    |        hari@gmail.com       |   91-9566067500   |     11/11/1990    |      123      |          123          |
+|      lee       |      david      |    bhvgvhgf   |        ghghg@gmm.llo        |   91-9566067502   |     11/11/2015    |      123      |          123          |
+|      bala      |     murugan     |      bala     | noreplymuthukumar@gmail.com |   91-9566067503   |     11/04/2015    |     12345     |         12345         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |      123      |          123          |
+|      mkr       |        sn       |      mkr      | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|     saran      |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |      abcd     |          abcd         |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+2019/10/02 20:25:16 MuthukumarDbAdminAccess,line: 367     INFO | Please enter mobile number to delete a Admin\User account
+2019/10/02 20:25:27 MuthukumarDbAdminAccess,line: 373     INFO | Its a valid Mobile Number: 91-9566067572
+2019/10/02 20:25:27 MuthukumarDbAdminAccess,line: 413     INFO | Re-enter->>> Which mobile number need to delete!
+2019/10/02 20:25:31 MuthukumarDb,line: 375     INFO | Query executed Successful on *** USER_TABLE *** table
+2019/10/02 20:25:31 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      hari      |      haran      |     harish    |        hari@gmail.com       |   91-9566067500   |     11/11/1990    |      123      |          123          |
+|      lee       |      david      |    bhvgvhgf   |        ghghg@gmm.llo        |   91-9566067502   |     11/11/2015    |      123      |          123          |
+|      bala      |     murugan     |      bala     | noreplymuthukumar@gmail.com |   91-9566067503   |     11/04/2015    |     12345     |         12345         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |      123      |          123          |
+|      mkr       |        sn       |      mkr      | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+2019/10/02 20:25:31 MuthukumarDbAdminAccess,line: 95     INFO | <<<<<*** Choose your operation ***>>>>>
+2019/10/02 20:25:31 MuthukumarDbAdminAccess,line: 96     INFO | ======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======
+2019/10/02 20:25:35 MuthukumarDbAdminAccess,line: 113     INFO | Exiting Database access...
+2019/10/02 20:25:35 MuthukumarDbAdminAccess,line: 133     INFO | If you want to send an email, please give your option: (Yes/y or No/n)
+2019/10/02 20:25:37 MuthukumarDbAdminAccess,line: 138     INFO | Selected option is: y
+
+2019/10/02 20:25:37 MuthukumarDbAdminAccess,line: 140     INFO | Email will send to admin Email-id for backup...
+Enter admin Email-id: 
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 492     INFO | Its a valid Email ID: muthukumarece5@gmail.com
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 146     INFO | Entered admin Email-id is: muthukumarece5@gmail.com
+2019/10/02 20:25:55 MuthukumarDbAdminAccess,line: 166     INFO | ***** Admin ACCESS page end *****

@@ -1,0 +1,47 @@
+2019/10/02 20:17:01 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:17:01 MuthukumarDbExecuteTest,line: 332     INFO | Email-id is: noreplymuthukumar@gmail.com
+
++------------------------------------------------------------------------------------------------------+
+|                                         Module Mapping List                                          |
++-------+-----------------+----------------------------------------------------------------------------+
+| Index |    Module Key   |                                Module Name                                 |
++-------+-----------------+----------------------------------------------------------------------------+
+|   1   |        ex       |      F://Python//script//DB_Scripts//09_sep_2019//MuthukumarClass.py       |
++-------+-----------------+----------------------------------------------------------------------------+
+|   2   |       myc       |                 F://Python//script//IMPORT_MODULE//update                  |
++-------+-----------------+----------------------------------------------------------------------------+
+|   3   |       ban       |                 F://Python//script//New folder//banner.py                  |
++-------+-----------------+----------------------------------------------------------------------------+
+|   4   |       kwa       |               F://Python//script//New folder//kwarg_args.py                |
++-------+-----------------+----------------------------------------------------------------------------+
+|   5   |   user signup   |   F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbUserSignup.py   |
++-------+-----------------+----------------------------------------------------------------------------+
+|   6   |   user signin   |   F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbUserSignin.py   |
++-------+-----------------+----------------------------------------------------------------------------+
+|   7   |   admin signin  |  F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminSignin.py   |
++-------+-----------------+----------------------------------------------------------------------------+
+|   8   |   admin signup  |  F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminSignup.py   |
++-------+-----------------+----------------------------------------------------------------------------+
+|   9   | forgot password | F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbForgotPassword.py |
++-------+-----------------+----------------------------------------------------------------------------+
+|   10  |   admin access  |  F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminAccess.py   |
++-------+-----------------+----------------------------------------------------------------------------+
+2019/10/02 20:17:01 MuthukumarDbExecuteTest,line: 234     INFO | Enter data:
+2019/10/02 20:17:16 MuthukumarDbExecuteTest,line: 237     INFO | Entered data is: 9
+2019/10/02 20:17:16 MuthukumarDbExecuteTest,line: 272     INFO | Execute_mod: ['F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbForgotPassword.py']['forgot password']
+2019/10/02 20:17:16 MuthukumarDbExecuteTest,line: 343     INFO | Exec File 'MuthukumarDbExecuteTest' Current version is "2019.07.27.01" 
+2019/10/02 20:18:30 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+
++--------------------------------------------+
+|          Executed modules version          |
++----------------------------+---------------+
+|        Module Name         |    Version    |
++----------------------------+---------------+
+|  MuthukumarDbExecuteTest   | 2019.07.27.01 |
+| MuthukumarDbForgotPassword | 2019.07.14.01 |
++----------------------------+---------------+
+
++------------------------------------------------------------------+------------------+
+|                                                   Execution Time |          0:01:29 |
++------------------------------------------------------------------+------------------+
+2019/10/02 20:18:30 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************

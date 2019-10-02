@@ -1,0 +1,14 @@
+2019/10/02 20:13:24 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_UTILITY_LOG
+2019/10/02 20:13:24 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: None *******
+2019/10/02 20:13:24 MuthukumarDbUtility,line: 146     INFO | Imported from another class!!!
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 39     INFO | ***** MuthukumarDbUtility init list: ['F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminSignup.py'] *******
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarDbAdminSignup' Current version is "2019.07.15.01" 
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarDbAdminSignup.MuthukumarDbAdminSignup'>
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarDbAdminSignup found in file MuthukumarDbAdminSignup.py. Executing as a class.
+2019/10/02 20:13:59 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)
+ts//09_sep_2019//MuthukumarDbAdminSignup.py'] *******
+2019/10/02 20:13:59 MuthukumarDbExecuteTest,line: 343     INFO | Exec File 'MuthukumarDbExecuteTest' Current version is "2019.07.27.01" 
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 86     INFO | File 'MuthukumarDbAdminSignup' Current version is "2019.07.15.01" 
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 93     INFO | CLS: <class 'MuthukumarDbAdminSignup.MuthukumarDbAdminSignup'>
+2019/10/02 20:13:59 MuthukumarDbUtility,line: 100     INFO | Class MuthukumarDbAdminSignup found in file MuthukumarDbAdminSignup.py. Executing as a class.
+2019/10/02 20:13:59 MuthukumarDbUtilityCall,line: 62     INFO | execute user defined method(s)

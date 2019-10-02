@@ -1,0 +1,21 @@
+2019/10/02 20:16:11 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_ADMIN_SIGN_IN_LOG
+2019/10/02 20:16:11 MuthukumarDbAdminSignin,line: 63     INFO | ***** Admin SIGNIN page start *****
+2019/10/02 20:16:11 MuthukumarDbAdminSignin,line: 65     INFO | Enter admin name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 20:16:19 MuthukumarDbAdminSignin,line: 173     INFO | Valid admin name: muthu
+2019/10/02 20:16:19 MuthukumarDbAdminSignin,line: 73     INFO | Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] 
+Example : 91-9566067570
+2019/10/02 20:16:28 MuthukumarDbAdminSignin,line: 210     INFO | Its a valid Mobile Number: 91-9566067570
+2019/10/02 20:16:28 MuthukumarDbAdminSignin,line: 81     INFO | Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:16:34 MuthukumarDbAdminSignin,line: 247     INFO | Valid password: 123
+2019/10/02 20:16:34 MuthukumarDbAdminSignin,line: 92     INFO | Inprogress your signin ... please wait a moments...
+2019/10/02 20:16:39 MuthukumarDb,line: 45     INFO | From decorator function, Creating new cursor object here!
+2019/10/02 20:16:39 MuthukumarDb,line: 51     INFO | pyobdc object is created successfully...
+2019/10/02 20:16:39 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** ADMIN_TABLE *** table
+2019/10/02 20:16:39 MuthukumarDbAdminSignin,line: 115     INFO | Entered admin mobilenumber, adminname and adminpassword are matched.
+2019/10/02 20:16:39 MuthukumarDbAdminSignin,line: 123     INFO | If you want to sending email, please give your option: (Yes/y or No/n)
+2019/10/02 20:16:45 MuthukumarDbAdminSignin,line: 128     INFO | Selected option is: y
+
+2019/10/02 20:16:45 MuthukumarDbAdminSignin,line: 130     INFO | Email will send to admin Email-id for backup...
+2019/10/02 20:16:45 MuthukumarDbAdminSignin,line: 150     INFO | ***** Admin SIGNIN page end *****
+2019/10/02 20:16:50 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:16:50 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************

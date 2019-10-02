@@ -1,0 +1,27 @@
+2019/10/02 20:14:00 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_ADMIN_SIGN_UP_LOG
+2019/10/02 20:14:00 MuthukumarDbAdminSignup,line: 60     INFO | ***** ADMIN SIGNUP page start *****
+2019/10/02 20:14:00 MuthukumarDbAdminSignup,line: 62     INFO | Enter admin name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 20:14:11 MuthukumarDbAdminSignup,line: 223     INFO | Valid admin name: bala
+2019/10/02 20:14:11 MuthukumarDbAdminSignup,line: 70     INFO | Enter email-id: [Alphabet character,numbers and special characters [ '-' and/or '.' ] are allowed] Example: abcd_5.kum@gmail.com, noreplymuthukumar@gmail.com
+2019/10/02 20:14:23 MuthukumarDbAdminSignup,line: 293     INFO | Its a valid Email ID: noreplymuthukumar@gmail.com
+2019/10/02 20:14:23 MuthukumarDbAdminSignup,line: 79     INFO | Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] Example : 91-9566067570
+2019/10/02 20:14:32 MuthukumarDbAdminSignup,line: 344     INFO | Its a valid Mobile Number: 91-9566067503
+2019/10/02 20:14:32 MuthukumarDbAdminSignup,line: 93     INFO | Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:14:36 MuthukumarDbAdminSignup,line: 101     INFO | Valid password: 123
+2019/10/02 20:14:36 MuthukumarDbAdminSignup,line: 123     INFO | Enter your confirm password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:14:45 MuthukumarDbAdminSignup,line: 131     INFO | Entered confirm password is invalid: 12
+
+2019/10/02 20:14:45 MuthukumarDbAdminSignup,line: 133  WARNING | Try again confirm password (You can give use this format:: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:14:51 MuthukumarDbAdminSignup,line: 145     INFO | Entered confirm password is invalid: 12
+
+2019/10/02 20:14:59 MuthukumarDbAdminSignup,line: 141     INFO | Valid confirm password: 123
+2019/10/02 20:14:59 MuthukumarDbAdminSignup,line: 153     INFO | Verified password and confirm password is equal
+2019/10/02 20:14:59 MuthukumarDbAdminSignup,line: 164     INFO | Inprogress your signup ... please wait a moments...
+2019/10/02 20:15:04 MuthukumarDb,line: 45     INFO | From decorator function, Creating new cursor object here!
+2019/10/02 20:15:05 MuthukumarDb,line: 51     INFO | pyobdc object is created successfully...
+2019/10/02 20:15:05 MuthukumarDb,line: 211     INFO | User signup data's inserted into *** ADMIN_TABLE *** table
+2019/10/02 20:15:05 MuthukumarDbAdminSignup,line: 182     INFO | ***** Admin SIGNUP page end *****
+2019/10/02 20:15:06 MuthukumarSms,line: 54     INFO | Sending sms to: 91-9566067503
+2019/10/02 20:15:07 MuthukumarDbExecuteTest,line: 80    ERROR | Observed exception when call Func--> test_run!!! exceptions must derive from BaseException.
+2019/10/02 20:15:07 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:15:07 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************

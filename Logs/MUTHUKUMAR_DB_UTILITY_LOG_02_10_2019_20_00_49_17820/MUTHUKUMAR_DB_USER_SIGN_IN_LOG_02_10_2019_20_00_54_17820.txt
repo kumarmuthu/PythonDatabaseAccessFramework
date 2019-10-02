@@ -1,0 +1,24 @@
+2019/10/02 20:00:54 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_USER_SIGN_IN_LOG
+2019/10/02 20:00:54 MuthukumarDbUserSignin,line: 57     INFO | ***** User SIGNIN page start *****
+2019/10/02 20:00:54 MuthukumarDbUserSignin,line: 59     INFO | Enter user name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 20:01:10 MuthukumarDbUserSignin,line: 165     INFO | Valid user name: bala
+2019/10/02 20:01:10 MuthukumarDbUserSignin,line: 67     INFO | Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] Example : 91-9566067570
+2019/10/02 20:01:27 MuthukumarDbUserSignin,line: 205     INFO | Entered Mobile Number is Invalid:  91-9566067503
+
+2019/10/02 20:01:27 MuthukumarDbUserSignin,line: 206  WARNING | Try again user Mobile Number (You can use this format:: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] Example : 91-9566067570)
+2019/10/02 20:01:41 MuthukumarDbUserSignin,line: 215     INFO | Its a valid Mobile Number: 91-9566067503
+2019/10/02 20:01:41 MuthukumarDbUserSignin,line: 75     INFO | Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 20:01:51 MuthukumarDbUserSignin,line: 239     INFO | Valid password: 12345
+2019/10/02 20:01:51 MuthukumarDbUserSignin,line: 86     INFO | Inprogress your signin ... please wait a moments...
+2019/10/02 20:01:56 MuthukumarDb,line: 45     INFO | From decorator function, Creating new cursor object here!
+2019/10/02 20:01:57 MuthukumarDb,line: 51     INFO | pyobdc object is created successfully...
+2019/10/02 20:01:57 MuthukumarDb,line: 246     INFO | Signin data's are collected from *** USER_TABLE *** table
+2019/10/02 20:01:57 MuthukumarDbUserSignin,line: 109     INFO | Entered user mobilenumber, username and userpassword are matched.
+2019/10/02 20:01:57 MuthukumarDbUserSignin,line: 116     INFO | If you want to sending email, please give your option: (Yes/y or No/n)
+2019/10/02 20:02:06 MuthukumarDbUserSignin,line: 121     INFO | Selected option is: y
+
+2019/10/02 20:02:06 MuthukumarDbUserSignin,line: 123     INFO | Email will send to user Email-id for backup...
+2019/10/02 20:02:06 MuthukumarDbUserSignin,line: 142     INFO | ***** User SIGNIN page end *****
+2019/10/02 20:02:06 MuthukumarDbExecuteTest,line: 80    ERROR | Observed exception when call Func--> test_run!!! exceptions must derive from BaseException.
+2019/10/02 20:02:06 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:02:06 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************
