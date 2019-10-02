@@ -1,0 +1,1237 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MUTHUKUMAR_DB_ADMIN_ACCESS</title>
+<style type="text/css">
+body, html {
+background: #000000;
+width: auto;
+font-family: Arial;
+font-size: 16px;
+color: #C0C0C0;
+}
+h1 {
+color : #FFFFFF;
+border-bottom : 1px dotted #888888;
+}
+.box {
+border : 1px dotted #818286;
+padding : 5px;
+margin: 5px;
+width: 2400;
+background-color : #292929;
+}
+.err {
+word-break:break-all; word-wrap:break-all;
+color: red;
+font-family : arial;
+margin : 0;
+}
+.warn {
+word-break:break-all; word-wrap:break-all;
+color: magenta;
+font-family : arial;
+margin : 0;
+
+}
+.info {
+word-break:break-all; word-wrap:break-all;
+color: green;
+font-family : arial;
+margin : 0;
+}
+.debug {
+word-break:break-all; word-wrap:break-all;
+color: orange;
+font-family : arial;
+margin : 0;
+}
+</style>
+</head>
+<body>
+<h1>MUTHUKUMAR_DB_ADMIN_ACCESS</h1>
+
+<p>Select a category to display:
+<select id="mySelect" onchange="cate_fun()">
+  <option value="ALL">ALL
+  <option value="DEBUG">DEBUG
+  <option value="INFO">INFO
+  <option value="WARNING">WARNING
+  <option value="ERROR">ERROR
+</select>
+</p>
+
+<form>
+Type Keyword to display:
+<input type="text" id="text1" value="ALL" size="12"/>
+<input type="checkbox" id="check1" />
+<input type="button" id="button1" onclick="keyword_fun()"
+value="Seach" />
+</form>
+
+<script>
+var level_index = 4
+var msg_index = 5
+function cate_fun(){
+var tab = document.getElementById("toptable");
+var slct_v = document.getElementById("mySelect").value;
+
+for(var i=0; i<tab.rows.length;i++)
+{
+  	if (tab.rows[i].cells[level_index].innerHTML=="DEBUG" & slct_v=="DEBUG")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="INFO" & slct_v=="INFO")
+    {
+	    //console.log(i)
+		//console.log(tab.rows[i].cells[level_index].innerHTML)
+		tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="TABLE" & slct_v=="INFO")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="WARNING" & slct_v=="WARNING")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="ERROR" & slct_v=="ERROR")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else
+	{
+		if (slct_v=="ALL"){
+			tab.rows[i].style.display='';
+		}
+		else{
+			tab.rows[i].style.display='none';
+		};
+	};
+}
+}
+
+function keyword_fun()
+{
+var tab = document.getElementById("toptable");
+var Keyword = document.getElementById("text1").value;
+if (document.getElementById("check1").checked)
+	{
+	    Keyword=Keyword.toLowerCase();
+	}
+for (var i=0;i<tab.rows.length;i++) {
+	if (Keyword=="ALL" || Keyword=="all")
+	{
+		tab.rows[i].style.display='';
+	}
+	else
+	{
+		var td_msg=tab.rows[i].cells[msg_index].innerHTML
+		if (document.getElementById("check1").checked)
+			{
+			    td_msg=td_msg.toLowerCase();
+			}
+		if (td_msg.indexOf(Keyword)>=0)
+			{
+			    //console.log(Keyword)
+			    tab.rows[i].style.display='';
+			}
+		else
+			{
+				//console.log(i)
+			    tab.rows[i].style.display='none';
+			};
+    };
+  };
+}
+
+</script>
+<div class="box">
+<table id="toptable" border = "3" width="2400">
+<tr style="background-color:#0f9bf2; color:#fff;">
+<td width="200">Date and Time</td>
+<td width="100">Function Name</td>
+<td width="100">Module Name</td>
+<td width="100">Line</td>
+<td width="100">Level</td>
+<td width="100">Message</td>
+</tr>
+
+<tr>
+<td width="200">2019-10-02 20:23:09,360</td>
+<td width="100">Logger</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">273</td>
+<td width="100">INFO</td>
+<td class="info">Logger object created for: MUTHUKUMAR_DB_ADMIN_ACCESS</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:09,363</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">59</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin ACCESS page start *****</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:09,368</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">63</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin SIGNIN page start *****</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:09,370</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">65</td>
+<td width="100">INFO</td>
+<td class="info">Enter admin name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:18,864</td>
+<td width="100">admin_adminname_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">173</td>
+<td width="100">INFO</td>
+<td class="info">Valid admin name: bala</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:18,865</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">73</td>
+<td width="100">INFO</td>
+<td class="info">Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] 
+Example : 91-9566067570</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:26,902</td>
+<td width="100">adminmobile_number_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">210</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Mobile Number: 91-9566067503</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:26,903</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">81</td>
+<td width="100">INFO</td>
+<td class="info">Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:30,571</td>
+<td width="100">admin_password_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">247</td>
+<td width="100">INFO</td>
+<td class="info">Valid password: abcd</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:30,572</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">92</td>
+<td width="100">INFO</td>
+<td class="info">Inprogress your signin ... please wait a moments...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,573</td>
+<td width="100">wrapped</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">45</td>
+<td width="100">INFO</td>
+<td class="info">From decorator function, Creating new cursor object here!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,739</td>
+<td width="100">wrapped</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">51</td>
+<td width="100">INFO</td>
+<td class="info">pyobdc object is created successfully...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,740</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** ADMIN_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,742</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">115</td>
+<td width="100">INFO</td>
+<td class="info">Entered admin mobilenumber, adminname and adminpassword are matched.</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,742</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">150</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin SIGNIN page end *****</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:35,742</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">67</td>
+<td width="100">INFO</td>
+<td class="info">***** Selected table to access Database query: User_Table[1] Admin_Table[2]*****</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:38,577</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">79</td>
+<td width="100">INFO</td>
+<td class="info">User_Table will access</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:38,578</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">93</td>
+<td width="100">INFO</td>
+<td class="info">Note: Admin Access will denied while using more than 20(tms)</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:38,578</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">95</td>
+<td width="100">INFO</td>
+<td class="info">&lt;&lt;&lt;&lt;&lt;*** Choose your operation ***&gt;&gt;&gt;&gt;&gt;</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:38,579</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">96</td>
+<td width="100">INFO</td>
+<td class="info">======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:41,460</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:41,465</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>ghghgfh</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sub</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>saran</td>
+<td>sdf</td>
+<td>muthu</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067572</td>
+<td>19/04/1992</td>
+<td>abcd</td>
+<td>abcd</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:41,466</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">260</td>
+<td width="100">INFO</td>
+<td class="info">Please enter mobile number to make an update</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:51,950</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">266</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Mobile Number: 91-9566067502</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:51,951</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">306</td>
+<td width="100">INFO</td>
+<td class="info">Which column need to update!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:00,080</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">311</td>
+<td width="100">INFO</td>
+<td class="info">Selected column is: user_secondname</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:00,081</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">314</td>
+<td width="100">INFO</td>
+<td class="info">What value need to replace!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,014</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">319</td>
+<td width="100">INFO</td>
+<td class="info">Selected value is: david</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,029</td>
+<td width="100">Access_query</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">375</td>
+<td width="100">INFO</td>
+<td class="info">Query executed Successful on *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,030</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,035</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>david</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sub</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>saran</td>
+<td>sdf</td>
+<td>muthu</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067572</td>
+<td>19/04/1992</td>
+<td>abcd</td>
+<td>abcd</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,035</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">95</td>
+<td width="100">INFO</td>
+<td class="info">&lt;&lt;&lt;&lt;&lt;*** Choose your operation ***&gt;&gt;&gt;&gt;&gt;</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:22,036</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">96</td>
+<td width="100">INFO</td>
+<td class="info">======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:38,347</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:38,352</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>david</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sub</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>saran</td>
+<td>sdf</td>
+<td>muthu</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067572</td>
+<td>19/04/1992</td>
+<td>abcd</td>
+<td>abcd</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:38,352</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">260</td>
+<td width="100">INFO</td>
+<td class="info">Please enter mobile number to make an update</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:40,830</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">266</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Mobile Number: 91-9566067571</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:40,830</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">306</td>
+<td width="100">INFO</td>
+<td class="info">Which column need to update!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:54,122</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">311</td>
+<td width="100">INFO</td>
+<td class="info">Selected column is: user_secondname</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:24:54,123</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">314</td>
+<td width="100">INFO</td>
+<td class="info">What value need to replace!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,515</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">319</td>
+<td width="100">INFO</td>
+<td class="info">Selected value is: sn</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,598</td>
+<td width="100">Access_query</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">375</td>
+<td width="100">INFO</td>
+<td class="info">Query executed Successful on *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,599</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,602</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>david</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sn</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>saran</td>
+<td>sdf</td>
+<td>muthu</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067572</td>
+<td>19/04/1992</td>
+<td>abcd</td>
+<td>abcd</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,603</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">95</td>
+<td width="100">INFO</td>
+<td class="info">&lt;&lt;&lt;&lt;&lt;*** Choose your operation ***&gt;&gt;&gt;&gt;&gt;</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:01,603</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">96</td>
+<td width="100">INFO</td>
+<td class="info">======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:16,361</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:16,368</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>david</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sn</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>saran</td>
+<td>sdf</td>
+<td>muthu</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067572</td>
+<td>19/04/1992</td>
+<td>abcd</td>
+<td>abcd</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:16,368</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">367</td>
+<td width="100">INFO</td>
+<td class="info">Please enter mobile number to delete a Admin\User account</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:27,051</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">373</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Mobile Number: 91-9566067572</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:27,052</td>
+<td width="100">Database_access</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">413</td>
+<td width="100">INFO</td>
+<td class="info">Re-enter-&gt;&gt;&gt; Which mobile number need to delete!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:31,923</td>
+<td width="100">Access_query</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">375</td>
+<td width="100">INFO</td>
+<td class="info">Query executed Successful on *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:31,924</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** USER_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:31,928</td>
+<td width="100">pretty_table_to_html_table_convertor</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">313</td>
+<td width="100">INFO</td>
+<td class="info">
+ <?xml version="1.0" encoding="utf-8"?>
+<table  border = "3">
+<tr>
+<th>user_firstname</th>
+<th>user_secondname</th>
+<th>user_username</th>
+<th>user_email</th>
+<th>usermobile_number</th>
+<th>userdate_of_birth</th>
+<th>user_password</th>
+<th>user_confirm_password</th>
+</tr>
+<tr>
+<td>hari</td>
+<td>haran</td>
+<td>harish</td>
+<td>hari@gmail.com</td>
+<td>91-9566067500</td>
+<td>11/11/1990</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>lee</td>
+<td>david</td>
+<td>bhvgvhgf</td>
+<td>ghghg@gmm.llo</td>
+<td>91-9566067502</td>
+<td>11/11/2015</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>bala</td>
+<td>murugan</td>
+<td>bala</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067503</td>
+<td>11/04/2015</td>
+<td>12345</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>muthu</td>
+<td>s</td>
+<td>kumar</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067570</td>
+<td>19/04/1992</td>
+<td>123</td>
+<td>123</td>
+</tr>
+<tr>
+<td>mkr</td>
+<td>sn</td>
+<td>mkr</td>
+<td>noreplymuthukumar@gmail.com</td>
+<td>91-9566067571</td>
+<td>05/08/2012</td>
+<td>1234</td>
+<td>1234</td>
+</tr>
+</table>
+<body/>
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:31,928</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">95</td>
+<td width="100">INFO</td>
+<td class="info">&lt;&lt;&lt;&lt;&lt;*** Choose your operation ***&gt;&gt;&gt;&gt;&gt;</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:31,929</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">96</td>
+<td width="100">INFO</td>
+<td class="info">======= SELECT-1 [READ],SELECT-2 [INSERT],SELECT-3 [UPDATE],SELECT-4 [DELETE],SELECT-5 [EXIT] =======</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:35,270</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">113</td>
+<td width="100">INFO</td>
+<td class="info">Exiting Database access...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:35,271</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">133</td>
+<td width="100">INFO</td>
+<td class="info">If you want to send an email, please give your option: (Yes/y or No/n)</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:37,654</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">138</td>
+<td width="100">INFO</td>
+<td class="info">Selected option is: y
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:37,655</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">140</td>
+<td width="100">INFO</td>
+<td class="info">Email will send to admin Email-id for backup...
+Enter admin Email-id: </td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:55,388</td>
+<td width="100">admin_email_validate</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">492</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Email ID: muthukumarece5@gmail.com</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:55,388</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">146</td>
+<td width="100">INFO</td>
+<td class="info">Entered admin Email-id is: muthukumarece5@gmail.com</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:25:55,389</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminAccess</td>
+<td width="100">166</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin ACCESS page end *****</td>
+</tr>
+

@@ -1,0 +1,336 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MUTHUKUMAR_DB_ADMIN_SIGN_IN_LOG</title>
+<style type="text/css">
+body, html {
+background: #000000;
+width: auto;
+font-family: Arial;
+font-size: 16px;
+color: #C0C0C0;
+}
+h1 {
+color : #FFFFFF;
+border-bottom : 1px dotted #888888;
+}
+.box {
+border : 1px dotted #818286;
+padding : 5px;
+margin: 5px;
+width: 2400;
+background-color : #292929;
+}
+.err {
+word-break:break-all; word-wrap:break-all;
+color: red;
+font-family : arial;
+margin : 0;
+}
+.warn {
+word-break:break-all; word-wrap:break-all;
+color: magenta;
+font-family : arial;
+margin : 0;
+
+}
+.info {
+word-break:break-all; word-wrap:break-all;
+color: green;
+font-family : arial;
+margin : 0;
+}
+.debug {
+word-break:break-all; word-wrap:break-all;
+color: orange;
+font-family : arial;
+margin : 0;
+}
+</style>
+</head>
+<body>
+<h1>MUTHUKUMAR_DB_ADMIN_SIGN_IN_LOG</h1>
+
+<p>Select a category to display:
+<select id="mySelect" onchange="cate_fun()">
+  <option value="ALL">ALL
+  <option value="DEBUG">DEBUG
+  <option value="INFO">INFO
+  <option value="WARNING">WARNING
+  <option value="ERROR">ERROR
+</select>
+</p>
+
+<form>
+Type Keyword to display:
+<input type="text" id="text1" value="ALL" size="12"/>
+<input type="checkbox" id="check1" />
+<input type="button" id="button1" onclick="keyword_fun()"
+value="Seach" />
+</form>
+
+<script>
+var level_index = 4
+var msg_index = 5
+function cate_fun(){
+var tab = document.getElementById("toptable");
+var slct_v = document.getElementById("mySelect").value;
+
+for(var i=0; i<tab.rows.length;i++)
+{
+  	if (tab.rows[i].cells[level_index].innerHTML=="DEBUG" & slct_v=="DEBUG")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="INFO" & slct_v=="INFO")
+    {
+	    //console.log(i)
+		//console.log(tab.rows[i].cells[level_index].innerHTML)
+		tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="TABLE" & slct_v=="INFO")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="WARNING" & slct_v=="WARNING")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="ERROR" & slct_v=="ERROR")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else
+	{
+		if (slct_v=="ALL"){
+			tab.rows[i].style.display='';
+		}
+		else{
+			tab.rows[i].style.display='none';
+		};
+	};
+}
+}
+
+function keyword_fun()
+{
+var tab = document.getElementById("toptable");
+var Keyword = document.getElementById("text1").value;
+if (document.getElementById("check1").checked)
+	{
+	    Keyword=Keyword.toLowerCase();
+	}
+for (var i=0;i<tab.rows.length;i++) {
+	if (Keyword=="ALL" || Keyword=="all")
+	{
+		tab.rows[i].style.display='';
+	}
+	else
+	{
+		var td_msg=tab.rows[i].cells[msg_index].innerHTML
+		if (document.getElementById("check1").checked)
+			{
+			    td_msg=td_msg.toLowerCase();
+			}
+		if (td_msg.indexOf(Keyword)>=0)
+			{
+			    //console.log(Keyword)
+			    tab.rows[i].style.display='';
+			}
+		else
+			{
+				//console.log(i)
+			    tab.rows[i].style.display='none';
+			};
+    };
+  };
+}
+
+</script>
+<div class="box">
+<table id="toptable" border = "3" width="2400">
+<tr style="background-color:#0f9bf2; color:#fff;">
+<td width="200">Date and Time</td>
+<td width="100">Function Name</td>
+<td width="100">Module Name</td>
+<td width="100">Line</td>
+<td width="100">Level</td>
+<td width="100">Message</td>
+</tr>
+
+<tr>
+<td width="200">2019-10-02 20:28:41,630</td>
+<td width="100">Logger</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">273</td>
+<td width="100">INFO</td>
+<td class="info">Logger object created for: MUTHUKUMAR_DB_ADMIN_SIGN_IN_LOG</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:41,631</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">63</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin SIGNIN page start *****</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:41,632</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">65</td>
+<td width="100">INFO</td>
+<td class="info">Enter admin name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:45,555</td>
+<td width="100">admin_adminname_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">173</td>
+<td width="100">INFO</td>
+<td class="info">Valid admin name: muthu</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:45,555</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">73</td>
+<td width="100">INFO</td>
+<td class="info">Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] 
+Example : 91-9566067570</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:50,732</td>
+<td width="100">adminmobile_number_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">210</td>
+<td width="100">INFO</td>
+<td class="info">Its a valid Mobile Number: 91-9566067570</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:50,733</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">81</td>
+<td width="100">INFO</td>
+<td class="info">Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:53,898</td>
+<td width="100">admin_password_validate</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">247</td>
+<td width="100">INFO</td>
+<td class="info">Valid password: 123</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:53,899</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">92</td>
+<td width="100">INFO</td>
+<td class="info">Inprogress your signin ... please wait a moments...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:58,901</td>
+<td width="100">wrapped</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">45</td>
+<td width="100">INFO</td>
+<td class="info">From decorator function, Creating new cursor object here!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:59,068</td>
+<td width="100">wrapped</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">51</td>
+<td width="100">INFO</td>
+<td class="info">pyobdc object is created successfully...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:59,069</td>
+<td width="100">User_and_admin_signin</td>
+<td width="100">MuthukumarDb</td>
+<td width="100">246</td>
+<td width="100">INFO</td>
+<td class="info">Signin data's are collected from *** ADMIN_TABLE *** table</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:59,071</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">115</td>
+<td width="100">INFO</td>
+<td class="info">Entered admin mobilenumber, adminname and adminpassword are matched.</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:28:59,071</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">123</td>
+<td width="100">INFO</td>
+<td class="info">If you want to sending email, please give your option: (Yes/y or No/n)</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:29:01,340</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">128</td>
+<td width="100">INFO</td>
+<td class="info">Selected option is: y
+</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:29:01,341</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">130</td>
+<td width="100">INFO</td>
+<td class="info">Email will send to admin Email-id for backup...</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:29:01,342</td>
+<td width="100">test_run</td>
+<td width="100">MuthukumarDbAdminSignin</td>
+<td width="100">150</td>
+<td width="100">INFO</td>
+<td class="info">***** Admin SIGNIN page end *****</td>
+</tr>
+
