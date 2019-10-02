@@ -1,0 +1,248 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MUTHUKUMAR_DB_UTILITY_LOG</title>
+<style type="text/css">
+body, html {
+background: #000000;
+width: auto;
+font-family: Arial;
+font-size: 16px;
+color: #C0C0C0;
+}
+h1 {
+color : #FFFFFF;
+border-bottom : 1px dotted #888888;
+}
+.box {
+border : 1px dotted #818286;
+padding : 5px;
+margin: 5px;
+width: 2400;
+background-color : #292929;
+}
+.err {
+word-break:break-all; word-wrap:break-all;
+color: red;
+font-family : arial;
+margin : 0;
+}
+.warn {
+word-break:break-all; word-wrap:break-all;
+color: magenta;
+font-family : arial;
+margin : 0;
+
+}
+.info {
+word-break:break-all; word-wrap:break-all;
+color: green;
+font-family : arial;
+margin : 0;
+}
+.debug {
+word-break:break-all; word-wrap:break-all;
+color: orange;
+font-family : arial;
+margin : 0;
+}
+</style>
+</head>
+<body>
+<h1>MUTHUKUMAR_DB_UTILITY_LOG</h1>
+
+<p>Select a category to display:
+<select id="mySelect" onchange="cate_fun()">
+  <option value="ALL">ALL
+  <option value="DEBUG">DEBUG
+  <option value="INFO">INFO
+  <option value="WARNING">WARNING
+  <option value="ERROR">ERROR
+</select>
+</p>
+
+<form>
+Type Keyword to display:
+<input type="text" id="text1" value="ALL" size="12"/>
+<input type="checkbox" id="check1" />
+<input type="button" id="button1" onclick="keyword_fun()"
+value="Seach" />
+</form>
+
+<script>
+var level_index = 4
+var msg_index = 5
+function cate_fun(){
+var tab = document.getElementById("toptable");
+var slct_v = document.getElementById("mySelect").value;
+
+for(var i=0; i<tab.rows.length;i++)
+{
+  	if (tab.rows[i].cells[level_index].innerHTML=="DEBUG" & slct_v=="DEBUG")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="INFO" & slct_v=="INFO")
+    {
+	    //console.log(i)
+		//console.log(tab.rows[i].cells[level_index].innerHTML)
+		tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="TABLE" & slct_v=="INFO")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="WARNING" & slct_v=="WARNING")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else if (tab.rows[i].cells[level_index].innerHTML=="ERROR" & slct_v=="ERROR")
+    {
+        tab.rows[0].style.display='';
+	    tab.rows[i].style.display='';
+	}
+	else
+	{
+		if (slct_v=="ALL"){
+			tab.rows[i].style.display='';
+		}
+		else{
+			tab.rows[i].style.display='none';
+		};
+	};
+}
+}
+
+function keyword_fun()
+{
+var tab = document.getElementById("toptable");
+var Keyword = document.getElementById("text1").value;
+if (document.getElementById("check1").checked)
+	{
+	    Keyword=Keyword.toLowerCase();
+	}
+for (var i=0;i<tab.rows.length;i++) {
+	if (Keyword=="ALL" || Keyword=="all")
+	{
+		tab.rows[i].style.display='';
+	}
+	else
+	{
+		var td_msg=tab.rows[i].cells[msg_index].innerHTML
+		if (document.getElementById("check1").checked)
+			{
+			    td_msg=td_msg.toLowerCase();
+			}
+		if (td_msg.indexOf(Keyword)>=0)
+			{
+			    //console.log(Keyword)
+			    tab.rows[i].style.display='';
+			}
+		else
+			{
+				//console.log(i)
+			    tab.rows[i].style.display='none';
+			};
+    };
+  };
+}
+
+</script>
+<div class="box">
+<table id="toptable" border = "3" width="2400">
+<tr style="background-color:#0f9bf2; color:#fff;">
+<td width="200">Date and Time</td>
+<td width="100">Function Name</td>
+<td width="100">Module Name</td>
+<td width="100">Line</td>
+<td width="100">Level</td>
+<td width="100">Message</td>
+</tr>
+
+<tr>
+<td width="200">2019-10-02 20:23:05,880</td>
+<td width="100">Logger</td>
+<td width="100">MuthukumarUserLib</td>
+<td width="100">273</td>
+<td width="100">INFO</td>
+<td class="info">Logger object created for: MUTHUKUMAR_DB_UTILITY_LOG</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:05,881</td>
+<td width="100">__init__</td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">39</td>
+<td width="100">INFO</td>
+<td class="info">***** MuthukumarDbUtility init list: None *******</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:05,881</td>
+<td width="100"><module></td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">146</td>
+<td width="100">INFO</td>
+<td class="info">Imported from another class!!!</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:08,286</td>
+<td width="100">__init__</td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">39</td>
+<td width="100">INFO</td>
+<td class="info">***** MuthukumarDbUtility init list: ['F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminAccess.py'] *******</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:08,340</td>
+<td width="100">import_function</td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">86</td>
+<td width="100">INFO</td>
+<td class="info">File 'MuthukumarDbAdminAccess' Current version is &quot;2019.07.20.01&quot; </td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:08,342</td>
+<td width="100">import_function</td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">93</td>
+<td width="100">INFO</td>
+<td class="info">CLS: &lt;class 'MuthukumarDbAdminAccess.MuthukumarDbAdminAccess'&gt;</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:08,344</td>
+<td width="100">import_function</td>
+<td width="100">MuthukumarDbUtility</td>
+<td width="100">100</td>
+<td width="100">INFO</td>
+<td class="info">Class MuthukumarDbAdminAccess found in file MuthukumarDbAdminAccess.py. Executing as a class.</td>
+</tr>
+
+
+<tr>
+<td width="200">2019-10-02 20:23:08,347</td>
+<td width="100">execute_file_import</td>
+<td width="100">MuthukumarDbUtilityCall</td>
+<td width="100">62</td>
+<td width="100">INFO</td>
+<td class="info">execute user defined method(s)</td>
+</tr>
+
+</table>
+</div>
+</body>
+</html>
