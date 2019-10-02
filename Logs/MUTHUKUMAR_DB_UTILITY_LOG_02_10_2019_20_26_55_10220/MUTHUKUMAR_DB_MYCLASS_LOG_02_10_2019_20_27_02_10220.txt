@@ -1,0 +1,7 @@
+2019/10/02 20:27:02 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_MYCLASS_LOG
+2019/10/02 20:27:02 MuthukumarClass,line: 14     INFO | Do some setup
+2019/10/02 20:27:02 MuthukumarClass,line: 15  WARNING | warning
+2019/10/02 20:27:02 MuthukumarClass,line: 17    ERROR | Error
+2019/10/02 20:27:02 MuthukumarClass,line: 31     INFO | YES, I am test func of muthu_class 
+2019/10/02 20:27:02 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 20:27:02 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************

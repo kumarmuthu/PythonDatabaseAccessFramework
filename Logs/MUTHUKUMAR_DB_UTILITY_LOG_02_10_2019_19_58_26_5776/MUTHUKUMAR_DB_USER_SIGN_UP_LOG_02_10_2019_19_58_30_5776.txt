@@ -1,0 +1,33 @@
+2019/10/02 19:58:30 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_USER_SIGN_UP_LOG
+2019/10/02 19:58:30 MuthukumarDbUserSignup,line: 62     INFO | ***** User SIGNUP page start *****
+2019/10/02 19:58:30 MuthukumarDbUserSignup,line: 64     INFO | Enter first name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 19:58:35 MuthukumarDbUserSignup,line: 181     INFO | It's a valid first name: bala
+2019/10/02 19:58:35 MuthukumarDbUserSignup,line: 72     INFO | Enter second name: [Alphabet character only allowed, minimum 1 character to maximum 20 chracter]
+2019/10/02 19:58:41 MuthukumarDbUserSignup,line: 218     INFO | It's a valid second name: murugan
+2019/10/02 19:58:41 MuthukumarDbUserSignup,line: 80     INFO | Enter user name: [Alphabet character only allowed, minimum 3 character to maximum 20 chracter]
+2019/10/02 19:58:44 MuthukumarDbUserSignup,line: 255     INFO | It's a valid user name: bala
+2019/10/02 19:58:44 MuthukumarDbUserSignup,line: 88     INFO | Enter email-id: [Alphabet character,numbers and special characters [ '-' and/or '.' ] are allowed] Example: abcd_5.kum@gmail.com, noreplymuthukumar@gmail.com
+2019/10/02 19:58:48 MuthukumarDbUserSignup,line: 326     INFO | It's a valid Email ID: noreplymuthukumar@gmail.com
+2019/10/02 19:58:48 MuthukumarDbUserSignup,line: 97     INFO | Enter your Mobile Number: country code(2 digit) and Number(10 digit) [xx-xxxxxxxxxx] Example : 91-9566067570
+2019/10/02 19:58:55 MuthukumarDbUserSignup,line: 378     INFO | It's a valid mobile number: 91-9566067503
+2019/10/02 19:58:55 MuthukumarDbUserSignup,line: 105     INFO | Enter your date of birth: Example- [dd/mm/yyyy] or [dd-mm-yyyy] or [dd.mm.yyyy]
+2019/10/02 19:58:55 MuthukumarDbUserSignup,line: 107     INFO | NOTE:- Date of birth is not equal to today or future date!!!
+2019/10/02 19:58:55 MuthukumarDbUserSignup,line: 110     INFO | Today Date: 02/10/2019
+2019/10/02 19:59:05 MuthukumarDbUserSignup,line: 431     INFO | It's a valid date of birth: 11/04/2015
+2019/10/02 19:59:05 MuthukumarDbUserSignup,line: 498     INFO | Enter your password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 19:59:11 MuthukumarDbUserSignup,line: 507     INFO | It's a valid password: 12345
+2019/10/02 19:59:11 MuthukumarDbUserSignup,line: 530     INFO | Enter your confirm password: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 19:59:20 MuthukumarDbUserSignup,line: 538     INFO | Entered confirm password is invalid: 1
+
+2019/10/02 19:59:20 MuthukumarDbUserSignup,line: 540  WARNING | Try again confirm password (You can give use this format:: [Alphabet character and numbers are allowed, minimum 3 character and maximum 20 chracter]
+2019/10/02 19:59:25 MuthukumarDbUserSignup,line: 548     INFO | It's a valid confirm password: 12345
+2019/10/02 19:59:25 MuthukumarDbUserSignup,line: 558     INFO | Verified password and confirm password is equal
+2019/10/02 19:59:25 MuthukumarDbUserSignup,line: 126     INFO | In progress your signup ... please wait a moments...
+2019/10/02 19:59:30 MuthukumarDb,line: 45     INFO | From decorator function, Creating new cursor object here!
+2019/10/02 19:59:30 MuthukumarDb,line: 51     INFO | pyobdc object is created successfully...
+2019/10/02 19:59:30 MuthukumarDb,line: 211     INFO | User signup data's inserted into *** USER_TABLE *** table
+2019/10/02 19:59:30 MuthukumarDbUserSignup,line: 139     INFO | ***** User SIGNUP page end *****
+2019/10/02 19:59:36 MuthukumarSms,line: 54     INFO | Sending sms to: 91-9566067503
+2019/10/02 19:59:36 MuthukumarDbExecuteTest,line: 80    ERROR | Observed exception when call Func--> test_run!!! exceptions must derive from BaseException.
+2019/10/02 19:59:37 MuthukumarUserLib,line: 273     INFO | Logger object created for: MUTHUKUMAR_DB_EXECUTE_TEST_LOG
+2019/10/02 19:59:37 MuthukumarDbExecuteTest,line: 370     INFO | **************** END ****************
