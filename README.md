@@ -48,11 +48,11 @@ Script execution:
 	Notes: We can execute any one of the script from dict map(mapping dict is available in this scriptMuthukumarDbUtilityCall.py)
 
 Log:
-        View link🔗: http://htmlpreview.github.io/
+        Preview link🔗: http://htmlpreview.github.io/
 
 	If you want to see HTML log on web browser, please use this link. Just copy and paste full path. 
 
-	View link🔗: http://htmlpreview.github.io/
+	Preview link🔗: http://htmlpreview.github.io/
 	1) Go to log location:
 	python_database_access/Logs
 
