@@ -18,7 +18,9 @@ Example class file:
 * MuthukumarClass.py
 
 Script execution:
+
 	1) How to execute the script form Pycharm: with runtime argument(argparse)
+	
 	edit configurations =>>>
 	Script path: F:\Python\script\DB_Scripts\09_sep_2019\MuthukumarDbExecuteTest.py
 
