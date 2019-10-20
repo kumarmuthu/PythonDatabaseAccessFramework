@@ -1,0 +1,7 @@
+I am from class 'ImportFile' init
+Before 'run_test' run
+I am from method 'run_test'
+provided file is invalid: F:\Python\script\IMPORT_MODULE\update\Muthu Class.py
+After 'run_test' run
+Exit test case
+Observed exception while executing 'execute_test' function
