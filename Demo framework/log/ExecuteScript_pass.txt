@@ -1,0 +1,11 @@
+I am from class 'ImportFile' init
+Before 'run_test' run
+I am from method 'run_test'
+Class is: <class 'MuthuClass.MuthuClass'>
+Class MuthuClass found in file MuthuClass.py. Executing as a class.
+I am from MuthuClass init
+I am from method 'test'
+Imported file executing here
+kwargs: {'logger': 'logger', 'argparse': 'argparse', 'email': 'email'}
+After 'run_test' run
+Exit test case
