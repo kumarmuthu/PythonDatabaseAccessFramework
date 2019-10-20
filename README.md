@@ -1,29 +1,29 @@
 ﻿# python_database_access
-Python database access created for windows, need changes if you want to execute this script on linux.
+Python database access script is created for **windows**, need changes if you want to execute this script on **linux**.
 
-Python database access framework demo is available in 'Demo framework' directory.
+Python database access framework demo is available in **Demo framework** directory.
 
-Script Main execution file name:
-* MuthukumarDbExecuteTest.py
+## Script Main execution file name:
+* **MuthukumarDbExecuteTest.py**
 
-Have two framework utility:
-* MuthukumarDbUtility.py      -->>>>> import file
-* MuthukumarDbUtilityCall.py  -->>>>> default script dict map is there
+## Have two framework utility:
+* **MuthukumarDbUtility.py**      (import file)
+* **MuthukumarDbUtilityCall.py**  (default script dict map is there)
 
-User library:
-* MuthukumarUserLib.py
+## User library:
+* **MuthukumarUserLib.py**
 
-Database library:
-* MuthukumarDb.py
+## Database library:
+* **MuthukumarDb.py**
 
-Example class file:
-* MuthukumarClass.py
+## Example class file:
+* **MuthukumarClass.py**
 
-Script execution:
+## Script execution:
 
 	1) How to execute the script form Pycharm: with runtime argument(argparse)
 	
-	edit configurations =>>>
+	Edit configurations:-
 	Script path: F:\Python\script\DB_Scripts\09_sep_2019\MuthukumarDbExecuteTest.py
 
 	Parameters: --email noreplymuthukumar@gmail.com --script-path F://Python//script//DB_Scripts//09_sep_2019//MuthukumarDbAdminSignin.py,F://Python//script//DB_Scripts//09_sep_2019//MuthukumarClass.py
@@ -49,8 +49,8 @@ Script execution:
 
 	Notes: We can execute any one of the script from dict map(mapping dict is available in this scriptMuthukumarDbUtilityCall.py)
 
-Log:
-        Preview link🔗: http://htmlpreview.github.io/
+## Log: 
+   ### Preview link🔗: http://htmlpreview.github.io/
 
 	If you want to see HTML log on web browser, please use this link. Just copy and paste full path. 
 
@@ -68,5 +68,4 @@ Log:
 
 	https://github.com/kumarmuthu/python_database_access/blob/master/Logs/MUTHUKUMAR_DB_UTILITY_LOG_02_10_2019_19_58_26_5776/MUTHUKUMAR_DB_EXECUTE_TEST_LOG_02_10_2019_19_58_26_5776.html
 
-	Example is available on: 
-	HTML log viewer snapshot
+	Example is available in 'HTML log viewer snapshot' folder
