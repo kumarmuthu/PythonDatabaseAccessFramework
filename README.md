@@ -1,6 +1,8 @@
 ﻿# python_database_access
 Python database access created for windows, need changes if you want to execute this script on linux.
 
+Python database access framework demo is available in 'Demo framework' directory.
+
 Script Main execution file name:
 * MuthukumarDbExecuteTest.py
 
