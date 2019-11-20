@@ -1,0 +1,67 @@
+29/07/2019 - 00:59:41 | ***** admin ACCESS page start *****
+29/07/2019 - 00:59:41 | ***** Selected table to access Database query: User_Table[1] Admin_Table[2]*****
+29/07/2019 - 00:59:49 | User_Table will access
+29/07/2019 - 00:59:49 | Note: Admin Access will denied while using more than 20(tms)
+29/07/2019 - 00:59:49 | <<<<<*** Choose your operation ***>>>>>
+29/07/2019 - 00:59:49 | SELECT-1 [READ], SELECT-2 [INSERT], SELECT-3 [UPDATE], SELECT-4 [DELETE], SELECT-5 [EXIT] =======
+29/07/2019 - 00:59:56 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 00:59:56 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 00:59:56 | Displaying USER data base Data(s):
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      fdf       |      gfhfgh     |      gdsf     |       muthu@gmail.com       |   90-0987654321   |     12/11/1990    |      1234     |          1234         |
+|     kkkkk      |      mmmmm      |     mumumu    |       kumar@gmail.com       |   90-1212121212   |     12/12/2014    |      asdf     |          asdf         |
+|      ghgh      |      hgfhgh     |      bbbf     |       muthu@gmail.com       |   91-0123654789   |     21/02/1993    |      1234     |          1234         |
+|      hhhh      |      iiiii      |      jgjg     |       mythuu@gmail.com      |   91-0987654321   |     22/09/1990    |     muthu     |         muthu         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |     123456    |         123456        |
+|      mkr       |       sub       |     mkr_s     | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|      jgh       |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |     123456    |         123456        |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+29/07/2019 - 00:59:56 | Please enter mobile number to delete a Admin\User account29/07/2019 - 01:00:15 | Its a valid Mobile Number :90-0987654321
+29/07/2019 - 01:00:15 | Re-enter->>> Which mobile number need to delete!
+29/07/2019 - 01:00:28 | Query executed Successful on  *** USER_TABLE *** table
+29/07/2019 - 01:00:28 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 01:00:28 | Displaying USER data base Data(s):
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|     kkkkk      |      mmmmm      |     mumumu    |       kumar@gmail.com       |   90-1212121212   |     12/12/2014    |      asdf     |          asdf         |
+|      ghgh      |      hgfhgh     |      bbbf     |       muthu@gmail.com       |   91-0123654789   |     21/02/1993    |      1234     |          1234         |
+|      hhhh      |      iiiii      |      jgjg     |       mythuu@gmail.com      |   91-0987654321   |     22/09/1990    |     muthu     |         muthu         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |     123456    |         123456        |
+|      mkr       |       sub       |     mkr_s     | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|      jgh       |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |     123456    |         123456        |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+29/07/2019 - 01:00:28 | <<<<<*** Choose your operation ***>>>>>
+29/07/2019 - 01:00:28 | SELECT-1 [READ], SELECT-2 [INSERT], SELECT-3 [UPDATE], SELECT-4 [DELETE], SELECT-5 [EXIT] =======
+29/07/2019 - 01:00:42 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 01:00:42 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 01:00:42 | Displaying USER data base Data(s):
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|     kkkkk      |      mmmmm      |     mumumu    |       kumar@gmail.com       |   90-1212121212   |     12/12/2014    |      asdf     |          asdf         |
+|      ghgh      |      hgfhgh     |      bbbf     |       muthu@gmail.com       |   91-0123654789   |     21/02/1993    |      1234     |          1234         |
+|      hhhh      |      iiiii      |      jgjg     |       mythuu@gmail.com      |   91-0987654321   |     22/09/1990    |     muthu     |         muthu         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |     123456    |         123456        |
+|      mkr       |       sub       |     mkr_s     | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|      jgh       |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |     123456    |         123456        |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+29/07/2019 - 01:00:42 | Please enter mobile number to delete a Admin\User account29/07/2019 - 01:00:45 | Its a valid Mobile Number :90-1212121212
+29/07/2019 - 01:00:45 | Re-enter->>> Which mobile number need to delete!
+29/07/2019 - 01:00:47 | Query executed Successful on  *** USER_TABLE *** table
+29/07/2019 - 01:00:47 | Signin data's collected from *** USER_TABLE *** table
+29/07/2019 - 01:00:47 | Displaying USER data base Data(s):
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+| user_firstname | user_secondname | user_username |          user_email         | usermobile_number | userdate_of_birth | user_password | user_confirm_password |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+
+|      ghgh      |      hgfhgh     |      bbbf     |       muthu@gmail.com       |   91-0123654789   |     21/02/1993    |      1234     |          1234         |
+|      hhhh      |      iiiii      |      jgjg     |       mythuu@gmail.com      |   91-0987654321   |     22/09/1990    |     muthu     |         muthu         |
+|     muthu      |        s        |     kumar     | noreplymuthukumar@gmail.com |   91-9566067570   |     19/04/1992    |     123456    |         123456        |
+|      mkr       |       sub       |     mkr_s     | noreplymuthukumar@gmail.com |   91-9566067571   |     05/08/2012    |      1234     |          1234         |
+|      jgh       |       sdf       |     muthu     | noreplymuthukumar@gmail.com |   91-9566067572   |     19/04/1992    |     123456    |         123456        |
++----------------+-----------------+---------------+-----------------------------+-------------------+-------------------+---------------+-----------------------+29/07/2019 - 01:00:47 | <<<<<*** Choose your operation ***>>>>>
+29/07/2019 - 01:00:47 | SELECT-1 [READ], SELECT-2 [INSERT], SELECT-3 [UPDATE], SELECT-4 [DELETE], SELECT-5 [EXIT] =======
+29/07/2019 - 01:00:52 | Exiting Database access...
+29/07/2019 - 01:00:52 | ***** admin ACCESS page end *****
+29/07/2019 - 01:00:52 | If you want to send an email, please give your option: (Yes/y or No/n)
+29/07/2019 - 01:00:55 | Selected option is: n
+29/07/2019 - 01:00:55 | Email will not send to admin Email-id!.
