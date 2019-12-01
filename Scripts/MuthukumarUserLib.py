@@ -47,18 +47,18 @@ class MuthukumarUserLib(object):
         :return: t, t1, t2
         '''
         from datetime import datetime
-        time11 = time1.split('.')
-        time12 = time11[0].split(' ')
-        time13 = time12[0].split('-')
-        time14 = time12[1].split(':')
-        t1 = datetime(int(time13[0]), int(time13[1]), int(
-            time13[2]), int(time14[0]), int(time14[1]), int(time14[2]))
-        time21 = time2.split('.')
-        time22 = time21[0].split(' ')
-        time23 = time22[0].split('-')
-        time24 = time22[1].split(':')
-        t2 = datetime(int(time23[0]), int(time23[1]), int(
-            time23[2]), int(time24[0]), int(time24[1]), int(time24[2]))
+        regex_date = re.match(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})', time1)
+        if regex_date is not None:
+            date_val = regex_date.group(1).split('-')
+            time_val = regex_date.group(2).split(':')
+        regex_date_2 = re.match(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})', time2)
+        if regex_date_2 is not None:
+            date_val2 = regex_date_2.group(1).split('-')
+            time_val2 = regex_date_2.group(2).split(':')
+        t1 = datetime(int(date_val[0]), int(date_val[1]), int(
+            date_val[2]), int(time_val[0]), int(time_val[1]), int(time_val[2]))
+        t2 = datetime(int(date_val2[0]), int(date_val2[1]), int(
+            date_val2[2]), int(time_val2[0]), int(time_val2[1]), int(time_val2[2]))
         t = t2 - t1
         return (t, t1, t2)
 
