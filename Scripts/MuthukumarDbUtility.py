@@ -89,19 +89,20 @@ class MuthukumarDbUtility(object):
                 log_obj.error("Observed exception while import a file: {}".format(err))
                 return False, self.dict_store
             else:
-                cls = getattr(imported_module_name, modname, None)
-                log_obj.info("CLS: {}".format(cls))
+                class_name = getattr(imported_module_name, modname, None)
+                log_obj.info("Class is: {}".format(class_name))
                 try:
-                    if cls is None:
-                        log_obj.info("No class {} found in file {}.py. Executing as a module.".format(modname,
-                                                                                                      modname))
-                        test_to_run = imported_module_name
+                    if class_name is None:
+                        log_obj.info("No class {} found in this file {}.py. Executing as a module.".format(modname,
+                                                                                                           modname))
+                        execute_class = imported_module_name
                     else:
-                        log_obj.info("Class {} found in file {}.py. Executing as a class.".format(modname, modname))
+                        log_obj.info("Class is {} found in this file {}.py."
+                                     "Executing this class.".format(modname, modname))
                         # Automatically execute imported file, def __init__ will be execute
-                        test_to_run = cls(self, *args, **kwargs)
-                except Exception as err_test_to_run:
-                    log_obj.error("Observed exception while executing imported file: {}".format(err_test_to_run))
+                        execute_class = class_name(self, *args, **kwargs)
+                except Exception as err_execute_class:
+                    log_obj.error("Observed exception while executing imported file: {}".format(err_execute_class))
                     return False, self.dict_store
             if imported_module_name:
                 for class_name, class_method_type in inspect.getmembers(imported_module_name):
