@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarDbAdminSignup is used to signup for admin.
 
     HISTORY
@@ -8,7 +8,7 @@
         * Added support for admin dedicated/default table CREATE and INSERT query
     - v2019.07.15.01 - Muthukumar Subramanian
         * Added logger support
-'''
+"""
 
 __version__ = "2019.07.15.01"
 __author__ = "Muthukumar Subramanian"
@@ -33,9 +33,10 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
         self.user_lib_obj = None
         if object_db is not None:
             self.object_db = object_db
-
+        super().__init__(self, *args, **kwargs)
+        
     def test_run(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         admin signup here
         Usage:
@@ -45,7 +46,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: kwargs
-        '''
+        """
         a_name = None
         e_mail = None
         m_num = None
@@ -207,7 +208,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
         return True, kwargs
 
     def admin_adminname_validate(self, _input_adminname, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -216,7 +217,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: adminname if it is True, else FAIL
-        '''
+        """
         pat = r"^[a-zA-Z0-9\_]{3,20}$"
         admin_adminname = re.match(pat, _input_adminname, re.M | re.I)
         if admin_adminname:
@@ -244,7 +245,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def _email(self, domain, em_domain_length, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         It is part of user_email_validate function
         Usage:
@@ -255,7 +256,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: Boolean
-        '''
+        """
         enable_e = False
         # Matching and displaying the result accordingly
         if(em_domain_length > 63 or em_domain_length < 2):
@@ -272,7 +273,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
         return enable_e
 
     def admin_email_validate(self, _input_email, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -281,7 +282,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: email-id if it is True, else FAIL
-        '''
+        """
         pat = r"^([a-zA-Z][\w\_\.]{3,50})\@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})$"
         admin_email = re.match(pat, _input_email, re.M | re.I)
         retry_valid = False
@@ -328,7 +329,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def adminmobile_number_validate(self, _input_mn, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -337,7 +338,7 @@ class MuthukumarDbAdminSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: mobile number if it is True, else FAIL
-        '''
+        """
         pat = r"^(\d{2})-(\d{10})$"
         adminmobile_number = re.match(pat, _input_mn, re.M | re.I)
         if adminmobile_number:

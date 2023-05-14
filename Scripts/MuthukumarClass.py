@@ -3,7 +3,7 @@ import re
 __author__ = "Muthukumar Subramanian"
 
 
-class MuthukumarClass():
+class MuthukumarClass:
     def __init__(self, *args, **kwargs):
         self.fail = "FAIL"
         self.log_obj = None

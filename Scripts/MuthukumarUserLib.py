@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarUserLib have get_execution_time, Time_Date, Create_dir, Logger,
     pretty_table_to_html_table_convertor functions. get_execution_time function is used to get a time difference
     between endtime - starttime. Time_Date function is used to get formated time.
@@ -9,7 +9,7 @@
     HISTORY
     - 2018.05.13.01 - Muthukumar Subramanian
         * Initial release
-'''
+"""
 
 import time
 import os
@@ -35,7 +35,7 @@ class MuthukumarUserLib(object):
         self.handler_as_root = False
 
     def get_execution_time(self, time1, time2, *args, **kwargs):
-        '''
+        """
          ..codeauthor:: Muthukumar Subramanian
          Usage:
                 Required argument(s):
@@ -45,7 +45,7 @@ class MuthukumarUserLib(object):
                     :param args: default list
                     :param kwargs: default dict
         :return: t, t1, t2
-        '''
+        """
         from datetime import datetime
         regex_date = re.match(r'(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})', time1)
         if regex_date is not None:
@@ -63,7 +63,7 @@ class MuthukumarUserLib(object):
         return (t, t1, t2)
 
     def Time_Date(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
          Usage:
             Required argument(s):
@@ -72,7 +72,7 @@ class MuthukumarUserLib(object):
                 :param args: default list
                 :param kwargs: default dict
         :return: final_date_time, current_date, date_a, dt
-        '''
+        """
         from time import localtime, strftime
         current_date = strftime("%d/%m/%Y", localtime())
         current_time = strftime("%H:%M:%S", localtime())
@@ -105,7 +105,7 @@ class MuthukumarUserLib(object):
     # ==================================================================================================
 
     def Create_dir(self, file_name, logger_enabled=None, add_handler=None, append_log=None, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -119,7 +119,7 @@ class MuthukumarUserLib(object):
                 :param args: default list
                 :param kwargs: default dict
         :return: filehandler_object
-        '''
+        """
         self.mkdir_count += 1
         from time import localtime, strftime
         current_time = strftime("%H_%M_%S", localtime())
@@ -155,7 +155,7 @@ class MuthukumarUserLib(object):
         return True, filehandler_object
 
     def Logger(self, dir_name, file_name, add_handler=None, append_log=None, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -168,7 +168,7 @@ class MuthukumarUserLib(object):
                 :param args: default list
                 :param kwargs: default dict
         :return: log_obj
-        '''
+        """
 
         if self.handler_as_root is True:
             file_name = 'root'
@@ -274,7 +274,7 @@ class MuthukumarUserLib(object):
         return log_obj
 
     def pretty_table_to_html_table_convertor(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -282,7 +282,7 @@ class MuthukumarUserLib(object):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         table_obj = kwargs.get('table_obj')
         log_obj = kwargs.get('log_obj')
         html_format = table_obj.get_html_string()

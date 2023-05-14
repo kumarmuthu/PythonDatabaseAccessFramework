@@ -1,10 +1,10 @@
-'''
+"""
     Class MuthukumarEmail have Muthu_email,this function will send an email with attachment to user/admin email-id.
 
     HISTORY
     - 2018.05.08.01 - Muthukumar Subramanian
         * Initial release
-'''
+"""
 
 __version__ = '2018.05.08.01'
 __author__ = 'Muthukumar Subramanian'
@@ -25,7 +25,7 @@ class MuthukumarEmail(object):
         pass
 
     def Muthu_email(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -34,7 +34,7 @@ class MuthukumarEmail(object):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         otp_email_msg = kwargs.get('otp_email_msg')
         user_email = kwargs.get('user_email')
         send_file = kwargs.get('send_file')
@@ -48,7 +48,7 @@ class MuthukumarEmail(object):
         body_details = None
         sender = 'noreplymuthukumar@gmail.com'
         # sender = 'muthukumarece5@gmail.com'
-        gmail_password = 'your gmail password'
+        gmail_password = 'rvgubbomdtxpvrhh'
         if send_all_file is None:
             recipients = ['noreplymuthukumar@gmail.com', user_email]
         else:

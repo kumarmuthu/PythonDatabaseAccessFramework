@@ -1,10 +1,10 @@
-'''
+"""
     Class MuthukumarSms have Muthu_sms,this function will send sms(through the way2sms) to user/admin mobile.
 
     HISTORY
     - 2018.06.09.01 - Muthukumar Subramanian
         * Initial release
-'''
+"""
 
 import way2sms
 import sys
@@ -18,7 +18,7 @@ class MuthukumarSms(object):
         pass
 
     def Muthu_sms(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -27,7 +27,7 @@ class MuthukumarSms(object):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         text = None
         login_type = kwargs.get('login_type')
         if login_type == 'ADMIN':

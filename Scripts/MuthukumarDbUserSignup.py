@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarDbUserSignup is used to signup for user.
 
     HISTORY
@@ -6,7 +6,7 @@
         * Initial release
     - v2019.07.14.01 - Muthukumar Subramanian
         * Added logger support
-'''
+"""
 
 import sys
 import re
@@ -32,9 +32,10 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         self.user_lib_obj = None
         if object_db is not None:
             self.object_db = object_db
+        super().__init__(self, *args, **kwargs)
 
     def test_run(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         user signup here
         Usage:
@@ -44,7 +45,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: kwargs
-        '''
+        """
         f_name = None
         s_name = None
         u_name = None
@@ -163,7 +164,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return True, kwargs
 
     def user_firstname_validate(self, _input_firstname, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -172,7 +173,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: firstname if it is True, else FAIL
-        '''
+        """
         pat = "^[a-zA-Z]{3,20}$"
         # pat = "muthu" search= match word anywhere but within pattern,
         # match= beginning match
@@ -202,7 +203,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def user_secondname_validate(self, _input_secondname, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -211,7 +212,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: secondname if it is True, else FAIL
-        '''
+        """
         pat = "^[a-zA-Z]{1,20}$"
         user_secondname = re.match(pat, _input_secondname, re.M | re.I)
         if user_secondname:
@@ -239,7 +240,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def user_username_validate(self, _input_username, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -248,7 +249,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: username if it is True, else FAIL
-        '''
+        """
         pat = r"^[a-zA-Z0-9\_]{3,20}$"
         user_username = re.match(pat, _input_username, re.M | re.I)
         if user_username:
@@ -276,7 +277,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def _email(self, domain, em_domain_length, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         It is part of user_email_validate function
         Usage:
@@ -287,7 +288,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: Boolean
-        '''
+        """
         enable_e = None
         # Matching and displaying the result accordingly
         if (em_domain_length > 63 or em_domain_length < 2):
@@ -305,7 +306,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return enable_e
 
     def user_email_validate(self, _input_email, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -314,7 +315,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: email-id if it is True, else FAIL
-        '''
+        """
         pat = r"^([a-zA-Z][\w\_\.]{3,50})\@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})$"
         user_email = re.match(pat, _input_email, re.M | re.I)
         retry_valid = False
@@ -362,7 +363,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def usermobile_number_validate(self, _input_mn, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -371,7 +372,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: mobile number if it is True, else FAIL
-        '''
+        """
         pat = r"^(\d{2})-(\d{10})$"
         usermobile_number = re.match(pat, _input_mn, re.M | re.I)
         if usermobile_number:
@@ -399,7 +400,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def userdate_of_birth_validate(self, _input_db, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -408,7 +409,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: date of birthif it is True, else FAIL
-        '''
+        """
         pat = r"^(3[01]|[12][0-9]|0[1-9])(\-|\.|\/)(1[0-2]|0[1-9])(\-|\.|\/)([0-9]{4})$"
         date_of_birth = re.match(pat, _input_db, re.M | re.I)
         retry_valid = False
@@ -479,7 +480,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
         return False, self.fail
 
     def user_pswd_and_conpswd_validate(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -488,7 +489,7 @@ class MuthukumarDbUserSignup(MuthukumarDb, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: password_cr, password_co it is True, else FAIL
-        '''
+        """
         j = 0
         while True:
             j = j + 1

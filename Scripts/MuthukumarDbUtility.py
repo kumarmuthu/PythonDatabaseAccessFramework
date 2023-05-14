@@ -1,11 +1,11 @@
-'''
+"""
     Class MuthukumarDbUtility will import given module/.py file and return a dict with all the methods and functions,
     we can execute all the methods and functions, dict value should be a copy of bound method object reference
 
     HISTORY
     - 2019.07.23.01 - Muthukumar Subramanian
         * Initial release
-'''
+"""
 
 import inspect
 from oslo_utils import importutils
@@ -28,9 +28,9 @@ utlity_log = 'MUTHUKUMAR_DB_UTILITY_LOG'
 
 class MuthukumarDbUtility(object):
     def __init__(self, module_list=None, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
-        '''
+        """
         self.dict_store = {}
         self.version_dict = {}
         self.module_list = module_list
@@ -39,7 +39,7 @@ class MuthukumarDbUtility(object):
         log_obj.info("***** MuthukumarDbUtility init list: {} *******".format(ppoutput))
 
     def import_function(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
 
         This module will import user given file(s)
@@ -49,7 +49,7 @@ class MuthukumarDbUtility(object):
             Optional argument(s):
                 :param kwargs: dict
         :return: self.dict_store
-        '''
+        """
         imported_module_name = None
         if args:
             args = list(args)

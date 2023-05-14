@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarDbAdminAccess is used to read|insert|update|delete for admin/user table.
     Operation before we need to login admin authorized credentials used to login, then we can do any operation here.
 
@@ -7,7 +7,7 @@
         * Initial release
     - v2019.07.20.01 - Muthukumar Subramanian
         * Added logger support
-'''
+"""
 import sys
 import re
 # from beautifultable import BeautifulTable
@@ -29,9 +29,10 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
         self.user_lib_obj = None
         if object_db is not None:
             self.object_db = object_db
+        MuthukumarDb.__init__(self, *args, **kwargs)
 
     def test_run(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         admin/user table read|insert|update|delete here
         Usage:
@@ -41,7 +42,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: kwargs
-        '''
+        """
         get_input_dict = {}
         e_mail_send = False
         E_mail_send = None
@@ -105,7 +106,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
                         pass
                     count_break = count_break + 1
                     if int_access_option:
-                        if((int_access_option > 5) or (int_access_option == -1) or (int_access_option == 0)):
+                        if ((int_access_option > 5) or (int_access_option == -1) or (int_access_option == 0)):
                             kwargs = {}
                             self.log_obj.info("Selected option is invalid! {}".format(int_access_option))
                             break
@@ -172,7 +173,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
         return True, kwargs
 
     def _read_query(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -181,7 +182,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         return_op = kwargs.get('return_op')
         login_type = kwargs.get('login_type')
         table = PrettyTable()
@@ -210,7 +211,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
         return True
 
     def Database_access(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -218,8 +219,8 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
                                 'login_type' either admin or user table
             Optional argument(s):
                 :param args: default list
-        :return: Boolean and break or unbreak for while loop termination/proceed further action
-        '''
+        :return: Boolean and break or un-break for while loop termination/proceed further action
+        """
         get_input_dict = {}
         query_option = kwargs.get('query_option')
         login_type = kwargs.get('login_type')
@@ -443,7 +444,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
         return True, 'unbreak'
 
     def _email(self, domain, em_domain_length, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         It is part of user_email_validate function
         Usage:
@@ -454,16 +455,16 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: Boolean
-        '''
+        """
         enable_e = False
         # Matching and displaying the result accordingly
-        if(em_domain_length > 63 or em_domain_length < 2):
+        if (em_domain_length > 63 or em_domain_length < 2):
             self.log_obj.info("According to domain rule Domain length should lie between 3 and 63".format())
             enable_e = False
-        elif(re.match(r"^\-.*|.*\-$", domain, re.M | re.I)):
+        elif (re.match(r"^\-.*|.*\-$", domain, re.M | re.I)):
             self.log_obj.info("Domain name can't start or end with -\n".format())
             enable_e = False
-        elif(re.match(r"^\d+", domain, re.M | re.I)):
+        elif (re.match(r"^\d+", domain, re.M | re.I)):
             self.log_obj.info("Domain Name can't start with Digit\n".format())
             enable_e = False
         else:
@@ -471,7 +472,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
         return enable_e
 
     def admin_email_validate(self, _input_email, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -480,7 +481,7 @@ class MuthukumarDbAdminAccess(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: email-id if it is True, else FAIL
-        '''
+        """
         pat = r"^([a-zA-Z][\w\_\.]{3,50})\@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})$"
         admin_email = re.match(pat, _input_email, re.M | re.I)
         retry_valid = False

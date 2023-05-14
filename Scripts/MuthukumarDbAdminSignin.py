@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarDbAdminSignin is used to signin for admin.
 
     HISTORY
@@ -8,7 +8,7 @@
         * Added email support for signin page
     - v2019.07.14.01 - Muthukumar Subramanian
         * Added logger support
-'''
+"""
 
 __version__ = "2019.07.14.01"
 __author__ = "Muthukumar Subramanian"
@@ -29,9 +29,10 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
         self.user_lib_obj = None
         if object_db is not None:
             self.object_db = object_db
+        MuthukumarDb.__init__(self, *args, **kwargs)
 
     def test_run(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         admin signin here
         Usage:
@@ -41,7 +42,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: kwargs
-        '''
+        """
         u_name = None
         m_num = None
         admin_email_id = None
@@ -157,7 +158,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
         return ret_bool, kwargs
 
     def admin_adminname_validate(self, _input_adminname, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -166,7 +167,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: adminname if it is True, else FAIL
-        '''
+        """
         pat = r"^[a-zA-Z0-9\_]{3,20}$"
         admin_adminname = re.match(pat, _input_adminname, re.M | re.I)
         if admin_adminname:
@@ -194,7 +195,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
         return False, self.fail
 
     def adminmobile_number_validate(self, _input_mn, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -203,7 +204,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: mobile number if it is True, else FAIL
-        '''
+        """
         pat = r"^(\d{2})-(\d{10})$"
         adminmobile_number = re.match(pat, _input_mn, re.M | re.I)
         if adminmobile_number:
@@ -231,7 +232,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
         return False, self.fail
 
     def admin_password_validate(self, _input_pwd, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -240,7 +241,7 @@ class MuthukumarDbAdminSignin(MuthukumarDb):
                 :param args: default list
                 :param kwargs: default dict
         :return: password if it is True, else FAIL
-        '''
+        """
         pat = r"^([-./@#&+\w]+){3,20}$"
         admin_pass = re.match(pat, _input_pwd, re.M | re.I)
         if admin_pass:

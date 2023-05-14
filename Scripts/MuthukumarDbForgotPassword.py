@@ -1,4 +1,4 @@
-'''
+"""
     Class MuthukumarDbForgotPassword is used to generate OTP and send that OTP to user/admin either sms or email-id.
     Then we are resting or changing old password for admin/user.
 
@@ -7,7 +7,7 @@
         * Initial release
     - v2019.07.14.01 - Muthukumar Subramanian
         * Added logger support
-'''
+"""
 
 import threading
 import time
@@ -40,9 +40,10 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         self.user_lib_obj = None
         if object_db is not None:
             self.object_db = object_db
+        super().__init__(self, *args, **kwargs)
 
     def test_run(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         admin/user password reset/change here
         Usage:
@@ -52,7 +53,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: kwargs
-        '''
+        """
         u_name = None
         e_mail = None
         m_num = None
@@ -291,7 +292,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                 break
                         if receive_otp is not None:
                             def verify_otp(*args, **kwargs):
-                                '''
+                                """
                                 ..codeauthor:: Muthukumar Subramanian
                                 verifying generated otp here
                                 Usage:
@@ -299,7 +300,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                         :param kwargs: required 'obj' otp object
                                     Optional argument(s):
                                         :param args: default list
-                                '''
+                                """
                                 totp_key = kwargs.get('obj')
                                 start_timestamp = datetime.now()
                                 start_time = str(start_timestamp)
@@ -334,7 +335,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                     return False
 
                             def generate(*args, **kwargs):
-                                '''
+                                """
                                 ..codeauthor:: Muthukumar Subramanian
                                 Generating pyotp key
                                 Usage:
@@ -342,7 +343,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                         :param kwargs: required 'obj' otp object
                                     Optional argument(s):
                                         :param args: default list
-                                '''
+                                """
                                 totp_key = kwargs.get('obj')
                                 global gen_otp
                                 gen_otp = totp_key.now()
@@ -350,7 +351,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                 return True
 
                             def countdown():
-                                '''
+                                """
                                 ..codeauthor:: Muthukumar Subramanian
                                 Displaying countdown time
                                 Usage:
@@ -359,7 +360,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                         :param :exitFlag(global) exit timer countdown
                                     Optional argument(s):
                                         :param args: default list
-                                '''
+                                """
                                 try:
                                     count_t = time_for_expire
                                     self.log_obj.info("After {} seconds OTP will expire...".format(count_t))
@@ -377,7 +378,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                     pass
 
                             def _sms_for_otp(**kwargs):
-                                '''
+                                """
                                 ..codeauthor:: Muthukumar Subramanian
                                 Usage:
                                     Required argument(s):
@@ -385,7 +386,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                     Optional argument(s):
                                         :param args: default list
                                 :return: Boolean
-                                '''
+                                """
                                 msg = kwargs.get('otp_msg')
                                 get_input = {'login_type': either_admin_user, 'forgot_paswd': m_num,
                                              'msg_signup': msg, 'log_obj': self.log_obj, }
@@ -395,7 +396,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                 return True
 
                             def _email_for_otp(**kwargs):
-                                '''
+                                """
                                 ..codeauthor:: Muthukumar Subramanian
                                 Usage:
                                     Required argument(s):
@@ -403,7 +404,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                                     Optional argument(s):
                                         :param args: default list
                                 :return: Boolean
-                                '''
+                                """
                                 msg = kwargs.get('otp_msg')
                                 get_input = {'otp_email_msg': msg, 'user_email': e_mail, 'log_obj': self.log_obj}
                                 e_ret = self.Muthu_email(**get_input)
@@ -546,7 +547,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return True, kwargs
 
     def user_username_validate(self, _input_username, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -555,7 +556,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: username if it is True, else FAIL
-        '''
+        """
         pat = r"^[a-zA-Z0-9\_]{3,20}$"
         user_username = re.match(pat, _input_username, re.M | re.I)
         if user_username:
@@ -583,7 +584,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return False, self.fail
 
     def _email(self, domain, em_domain_length, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         It is part of user_email_validate function
         Usage:
@@ -594,7 +595,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: Boolean
-        '''
+        """
         enable_e = None
         # Matching and displaying the result accordingly
         if (em_domain_length > 63 or em_domain_length < 2):
@@ -613,7 +614,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return enable_e
 
     def user_email_validate(self, _input_email, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -622,7 +623,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: email-id if it is True, else FAIL
-        '''
+        """
         pat = r"^([a-zA-Z][\w\_\.]{3,50})\@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,4})$"
         user_email = re.match(pat, _input_email, re.M | re.I)
         retry_valid = False
@@ -670,7 +671,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return False, self.fail
 
     def usermobile_number_validate(self, _input_mn, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -679,7 +680,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: mobile number if it is True, else FAIL
-        '''
+        """
         pat = r"^(\d{2})-(\d{10})$"
         usermobile_number = re.match(pat, _input_mn, re.M | re.I)
         if usermobile_number:
@@ -707,7 +708,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return False, self.fail
 
     def userdate_of_birth_validate(self, _input_db, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -716,7 +717,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: date of birthif it is True, else FAIL
-        '''
+        """
         pat = r"^(3[01]|[12][0-9]|0[1-9])(\-|\.|\/)(1[0-2]|0[1-9])(\-|\.|\/)([0-9]{4})$"
         date_of_birth = re.match(pat, _input_db, re.M | re.I)
         retry_valid = False
@@ -787,7 +788,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
         return False, self.fail
 
     def user_password_validate(self, _input_pwd, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         Usage:
             Required argument(s):
@@ -796,7 +797,7 @@ class MuthukumarDbForgotPassword(MuthukumarDb, MuthukumarEmail, MuthukumarSms):
                 :param args: default list
                 :param kwargs: default dict
         :return: password it is True, else FAIL
-        '''
+        """
         pat = r"^([-./@#&+\w]+){3,20}$"
         user_pass = re.match(pat, _input_pwd, re.M | re.I)
         if user_pass:

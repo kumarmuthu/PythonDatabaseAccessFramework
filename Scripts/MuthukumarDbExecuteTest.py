@@ -1,4 +1,5 @@
 from MuthukumarEmail import *
+# Muthu_email for send an email
 '''
     Class MuthukumarDbExecuteTest is main execution of the framework. We can import a file from argparse or
     default library mapped dict list. Method 'get_version_DB' will collect all the imported file(s) of version(s).
@@ -7,6 +8,8 @@ from MuthukumarEmail import *
     HISTORY
     - 2019.07.27.01 - Muthukumar Subramanian
         * Initial release
+    - 2022.10.05.01 - Muthukumar Subramanian
+        * Updated the script as per the pep8 standard
 '''
 import re
 import sys
@@ -19,10 +22,8 @@ import argparse
 
 starting_timestamp = datetime.now()
 start_time = str(starting_timestamp)
-# ============= Muthu_email for send an email =============
-# =========================================================
 
-__version__ = '2019.07.27.01'
+__version__ = '2022.10.05.01'
 __author__ = 'Muthukumar Subramanian'
 
 
@@ -36,7 +37,7 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
         sub_class_for_import_utils.__init__(self, module_list=self.list, *args, **kwargs)
 
     def test(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
          Usage:
                 Required argument(s):
@@ -44,27 +45,31 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
                 Optional argument(s):
                     :param args: default list
         :return: ret_dict_test
-        '''
+        """
         ret_dict_test = {}
-
+        mod_support_list = None
+        available_functions = None
+        log_obj = None
+        user_lib_obj = None
         print("### Executing test method ###".format())
         if kwargs:
             mod_support_list = kwargs.get('support_def_list')
-            available_defs = kwargs.get('available_def_list')
+            available_functions = kwargs.get('available_def_list')
             log_obj = kwargs.get('log_obj')
             user_lib_obj = kwargs.get('user_lib_obj')
-        if mod_support_list and available_defs:
+
+        if mod_support_list and available_functions:
             try:
-                for each_def in available_defs:
+                for each_def in available_functions:
                     if re.search(r'test_run.*', each_def):
-                        if callable(available_defs.get(each_def)):
+                        if callable(available_functions.get(each_def)):
                             if log_obj and user_lib_obj.handler_as_root is False:
                                 for index, each_handler in enumerate(log_obj.root.handlers):
                                     log_obj.root.removeHandler(log_obj.root.handlers[index])
                                 # for index, each_handler in reversed(list(enumerate(log_obj.handlers))):
                                 #     log_obj.removeHandler(log_obj.handlers[index])
                             time.sleep(1)
-                            ret_code, ret_ref = available_defs.get(each_def)(self, *args, **kwargs)
+                            ret_code, ret_ref = available_functions.get(each_def)(self, *args, **kwargs)
                             if ret_code:
                                 ret_dict_test.update({'ret_kwargs': ret_ref})
                             # ================= Send email if signup is successful =======================
@@ -81,18 +86,18 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
             try:
                 # Append remaining line(s)
                 execute_test_log = 'MUTHUKUMAR_DB_EXECUTE_TEST_LOG'
-                (ok, log_obj) = user_lib_obj.Create_dir(file_name=execute_test_log, logger_enabled=True,
+                ret_ok, log_obj = user_lib_obj.Create_dir(file_name=execute_test_log, logger_enabled=True,
                                                         add_handler=True, append_log=True)
-                if ok:
+                if ret_ok:
                     ret_dict_test.update({'log_obj': log_obj})
             except Exception as err_log:
                 print("Observed exception when create exec test!!! {}.".format(err_log))
             return True, ret_dict_test
         else:
-            False, ret_dict_test
+            return False, ret_dict_test
 
     def get_version_DB(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
          Usage:
             Required argument(s):
@@ -101,7 +106,7 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
                 :param args: default list
                 :param kwargs: default dict
         :return: file_name_list, version
-        '''
+        """
         try:
             version = __version__
         except Exception as e:
@@ -115,10 +120,10 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
             self.version_dict.update({file_name_list[0]: version})
             return True, file_name_list[0], version
         else:
-            False, None, None
+            return False, None, None
 
-    def Table_for_version(self, *args, **kwargs):
-        '''
+    def table_for_version(self, *args, **kwargs):
+        """
         ..codeauthor:: Muthukumar Subramanian
          Usage:
             Required argument(s):
@@ -126,7 +131,7 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         table_2 = PrettyTable()
         table_2.field_names = ['Module Name', 'Version']
         table_2.title = "Executed modules version"
@@ -140,8 +145,8 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
             ret = user_lib_obj.pretty_table_to_html_table_convertor(**kwargs)
         return True
 
-    def Table_for_execution(self, t_time, *args, **kwargs):
-        '''
+    def table_for_execution(self, t_time, *args, **kwargs):
+        """
         ..codeauthor:: Muthukumar Subramanian
          Usage:
             Required argument(s):
@@ -150,13 +155,14 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
             Optional argument(s):
                 :param args: default list
         :return: Boolean
-        '''
+        """
         self.t_time = t_time
+        list_app = []
         table_3 = PrettyTable()
         col = 'Execution Time'
         table_3.hrules = 1
         table_3.field_names = ['%64s' % (col), '%16s' % (self.t_time)]
-        list_app = []
+
         list_app.append(['DEL', 'DEL'])
         if list_app:
             for j in list_app:
@@ -167,7 +173,7 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
         return True
 
     def cleanup_html_log(self, *args, **kwargs):
-        '''
+        """
         ..codeauthor:: Muthukumar Subramanian
         we can delete all the html and log file from log wrote directory.
         As of now disabled this method.
@@ -178,8 +184,10 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
                 :param args: default list
                 :param kwargs: default dict
         :return: Boolean
-        '''
-        changedir = os.chdir(r"C:\\Users\ms023673\\Documents\\Latest_24_may_2019\\New_27_jun_2019\\DB\\log")
+        """
+        # TODO cleanup_html_log
+        changedir = os.chdir(r"C:\\Users\\ADMIN\\Documents\\GitHub\\PythonDatabaseAccessFramework"
+                             r"\\Scripts\\MuthukumarClass.py")
         cwd1 = os.getcwd()
         list_all = os.listdir(cwd1)
         if list_all:
@@ -188,20 +196,18 @@ class MuthukumarDbExecuteTest(sub_class_for_import_utils):
                 os.remove(each_html)
         return True
 
-# Private function
 
-
-def Top_Table(*args, **kwargs):
-    '''
+def top_table(*args, **kwargs):
+    """
     ..codeauthor:: Muthukumar Subramanian
-    Script will import mentioned file(s), but it is depending on mapped modules path
+    Script will import mentioned file(s), but it depends on mapped modules path
      Usage:
         Required argument(s):
             :param kwargs: default dict
         Optional argument(s):
             :param args: default list
     :return: execute_mod, module_list if it is successful, else Boolean
-    '''
+    """
     table = PrettyTable()
     table_field_values_append = []
     int_c = 0
@@ -257,7 +263,7 @@ def Top_Table(*args, **kwargs):
                                 module_list.append(table_field_values_append[i][1])
                         except IndexError:
                             continue
-                    elif(get_data, str):
+                    elif isinstance(get_data, str):
                         try:
                             if table_field_values_append[i][j] == get_data:
                                 execute_mod.append(table_field_values_append[i][2])
@@ -274,7 +280,7 @@ def Top_Table(*args, **kwargs):
 
 
 # Argparse
-parser = argparse.ArgumentParser(description='Parse script reqiured arguments')
+parser = argparse.ArgumentParser(description='Parse script required arguments')
 parser.add_argument("--script-path", help="provide required script name", type=str, nargs='+',
                     required=False, default=None)  # action='append' or nargs='*'
 parser.add_argument("--email", help="provide email-id", type=str,
@@ -288,11 +294,11 @@ if args.script_path is not None:
     if isinstance(file_name, list):
         file_name_append = []
         for i in file_name:
-            m1 = re.search(r'\,', i)
+            m1 = re.search(r',', i)
             if m1 is not None:
                 j = i.split(',')
                 for k in j:
-                    if not re.match(r'\,', k):
+                    if not re.match(r',', k):
                         if k == '':
                             continue
                         j = re.sub(r'^\s+|\s+$', r'', k)
@@ -309,14 +315,14 @@ if args.email is not None:
     def _email(domain, em_domain_length, *args, **kwargs):
         enable_e = False
         # Matching and displaying the result accordingly
-        if(em_domain_length > 63 or em_domain_length < 2):
-            self.log_obj.info("According to domain rule Domain length should lie between 3 and 63".format())
+        if em_domain_length > 63 or em_domain_length < 2:
+            print("According to domain rule Domain length should lie between 3 and 63".format())
             enable_e = False
-        elif(re.match(r"^\-.*|.*\-$", domain, re.M | re.I)):
-            self.log_obj.info("Domain name can't start or end with -\n".format())
+        elif re.match(r"^-.*|.*-$", domain, re.M | re.I):
+            print("Domain name can't start or end with -\n".format())
             enable_e = False
-        elif(re.match(r"^\d+", domain, re.M | re.I)):
-            self.log_obj.info("Domain Name can't start with Digit\n".format())
+        elif re.match(r"^\d+", domain, re.M | re.I):
+            print("Domain Name can't start with Digit\n".format())
             enable_e = False
         else:
             enable_e = True
@@ -336,7 +342,7 @@ else:
 ret_kwargs = None
 kwargs_for_table = {'log_obj': log_obj}
 
-send_file, list_send = Top_Table(**kwargs_for_table)
+send_file, list_send = top_table(**kwargs_for_table)
 obj = MuthukumarDbExecuteTest(import_mod_name=list_send)
 ret_code, file_key, ver = obj.get_version_DB()
 if ret_code:
@@ -359,13 +365,13 @@ else:
     except Exception as err_test:
         log_obj.error("Unable to execute Func--> test!!! {}.".format(err_test))
 # get version list
-obj.Table_for_version(**kwargs_for_table)
+obj.table_for_version(**kwargs_for_table)
 
 # Total execution time
 ending_timestamp = datetime.now()
 end_time = str(ending_timestamp)
 total_time, t1, t2 = user_lib_obj.get_execution_time(start_time, end_time)
-obj.Table_for_execution(total_time, **kwargs_for_table)
+obj.table_for_execution(total_time, **kwargs_for_table)
 
 log_obj.info("**************** END ****************".format())
 # Clearing file handler
@@ -373,11 +379,17 @@ log_obj.handlers.clear()
 
 # ================== Sending an email with all the attachments ===================
 em_kwargs = {'send_all_file': True, 'user_email': final_log_send_mail_id}
-# Send all log
-e_ret = object_email.Muthu_email(obj, **em_kwargs)
-if not e_ret:
-    print("Issues observed while validating Muthu_email".format())
+if final_log_send_mail_id is None:
+    print("Email-id not provided so we are skipping sending the entire log!.")
+else:
+    # Send all log
+    e_ret = object_email.Muthu_email(obj, **em_kwargs)
+    if not e_ret:
+        print("Issues observed while validating Muthu_email".format())
+    else:
+        print("Successfully sent the entire log message to provided e-mail...")
 # =============================================================================
 
+# TODO
 # cleanup html log(s)
 # obj.cleanup_html_log()
